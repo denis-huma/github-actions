@@ -37,10 +37,10 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                 name: models_artifact
-                path: Models
+                path: ${{ github.workspace }}/Models
 
             - name: build_project
-              if: github.event_name == 'push'
+              if: github.event_name == 'pull_request'
               run: npm run build # create a build folder that we need to deploy
             # - run: npm install -g surge # the smae as npx below
             - name: Deploy to staging
