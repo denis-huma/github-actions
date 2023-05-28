@@ -1,0 +1,18 @@
+name: Shell Commands
+
+on: release
+
+jobs:
+    job1:
+        name: Lint
+        runs-on: macos-latest
+        steps:
+            - name: echo a first string
+              run: echo "Hello World"
+    job2:
+        name: Test
+        runs-on: macos-latest
+        needs: ['job1']
+        steps:
+            - name: echo a first string
+              run: echo "Hello World"
