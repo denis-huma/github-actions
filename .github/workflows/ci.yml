@@ -37,7 +37,7 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                 name: models_artifact
-                path: ${{ github.workspace }}/Models
+                path: ./Models
 
             - name: build_project
               if: github.event_name == 'pull_request'
