@@ -1,0 +1,59 @@
+name: Matrix
+
+on: release
+
+jobs:
+    node-version:
+        strategy:
+            matrix:
+                os: [macos-latest, ubuntu-latest, windows-latest]
+                  # [6, 8, 10] means running 3 times
+                  # node_version - is your custom name, you can set any name you want
+                node_version: [6, 8, 10]
+                include:
+                    - os: ubuntu-latest
+                      node_version: 8
+                      # once the job is triggered and started working on ubuntu version 8 we add extra var is_ubuntu_8 = true
+                      is_ubuntu_8: "true"
+                exclude:
+                    - os: ubuntu-latest
+                      node_version: 6
+                    - os: macos-latest
+                      node_version: 8
+
+
+
+            # 2 means only 2 jobs will work running in parallel at the same time
+            max-parallel: 2
+                  # true = if any of 6,8,10 fails, all another will stop
+                  # false = if any of 6,8,10 fails, all another will continue
+            fail-fast: false
+
+        name: Node Version Job
+        runs-on: ${{ matrix.os }}
+        env:
+            IS_UBUNTU_8: $ {{ matrix.is_ubuntu_8 }}
+        steps:
+            - name: Log node version
+              run: node -v
+            - uses: actions/setup-node@v1
+              with:
+                node-version: ${{ matrix.node_version }}
+
+            - name: Log node version
+              run: |
+                node -v
+                echo $IS_UBUNTU_8
+
+
+
+
+
+
+
+
+
+
+
+
+              

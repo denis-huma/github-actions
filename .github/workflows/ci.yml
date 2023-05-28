@@ -1,0 +1,74 @@
+name: CI
+
+on:
+    pull_request:
+        branches: [develop]
+    push:
+        branches: [develop]
+
+jobs:
+    build_job:
+        runs-on: macos-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Cache node_modules
+              uses: actions/cache@v3
+              with:
+                path: Pods # the path that you would like to cache
+                # search cache saved under this key
+                key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+                # if github did not find cache for aforementioned key, it starts to try finding restore-keys
+                restore-keys: |
+                 ${{ runner.os }}-pods-
+
+            - name: Use NodeJS
+              uses: actions/setup-node@v3
+              with:
+                node-version: "18.x"
+            # - run: npm ci # the same as npm install, but more suitable for npm environments
+            # - run: npm run format:check # code formatting
+            # - run: npm ci
+            # - run: npm test
+            # - run: npm test -- --coverage
+              env:
+                CI: true # in order to get not interactive terminal
+
+            - name: Upload test coverage file artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                name: models_artifact
+                path: Models/
+
+            - name: build_project
+              if: github.event_name == 'push'
+              run: npm run build # create a build folder that we need to deploy
+            # - run: npm install -g surge # the smae as npx below
+            - name: Deploy to staging
+              if: github.event_name == 'push'
+              run: npx surge --project ./build --domain silent-apparatus.surge.sh
+
+              env:
+                SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+                SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
