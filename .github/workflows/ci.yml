@@ -34,10 +34,12 @@ jobs:
                 CI: true # in order to get not interactive terminal
 
             - name: Upload test coverage file artifacts
+              working-directory: github-actions/Models
+
               uses: actions/upload-artifact@v3
               with:
                 name: models_artifact
-                path: ./Models
+                path: Models
 
             - name: build_project
               if: github.event_name == 'pull_request'
