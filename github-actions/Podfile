@@ -1,3 +1,0 @@
-target 'github-actions' do
-  pod 'Analytics'
-end
