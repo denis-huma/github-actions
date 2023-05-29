@@ -1,7 +1,7 @@
 name: Workflow_1
 
-#on: workflow_dispatch # specific event - allows us manually trigger this workflow
- on: push:
+# on: workflow_dispatch # specific event - allows us manually trigger this workflow
+on: push
 #         branches: [main]
 #     pull_request:
 #         branches: [main]
