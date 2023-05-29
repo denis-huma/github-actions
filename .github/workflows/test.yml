@@ -1,0 +1,36 @@
+name: Workflow_1
+
+on: workflow_dispatch # specific event - allows us manually trigger this workflow
+# on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Start step
+              run: echo "Starting..."
+            - name: Between step
+              run: | 
+                echo "Between step 1"
+                echo "Between step 2"
+            - name: End step
+              run: echo "Ending..."
+    second_job:
+        runs-on: macos-latest
+        steps:
+            - name: Get code
+              uses: actions/checkout@v3
+            - name: install Node JS
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - name: Install dependencies
+              run: npm ci # the same as npm install
+            - name: Rut tests
+              run: npm test
+              
+                
+              
+            
+
+
