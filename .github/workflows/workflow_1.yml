@@ -1,4 +1,4 @@
-name: Workflow_1
+name: Workflow and run tests
 
 on: workflow_dispatch # specific event - allows us manually trigger this workflow
 # on: push

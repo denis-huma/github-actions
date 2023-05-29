@@ -1,18 +1,18 @@
-name: Slack message
-
-on:
-    # release:
-    #     types: [published]
-    push:
-
-jobs:
-    slack-message:
-        name: Slack Message Job
-        runs-on: macos-latest
-        steps:
-            - name: echo a first string
-              run: |
-            #   curl -X POST -H 'Content-type: application/json' --data '{"text" : "Hello"}' https://hooks.slack.com/services/ABCD/etc
-
-
-              
+#name: Slack message
+#
+#on:
+#    # release:
+#    #     types: [published]
+#    push:
+#
+#jobs:
+#    slack-message:
+#        name: Slack Message Job
+#        runs-on: macos-latest
+#        steps:
+#            - name: echo a first string
+#              run: |
+#            #   curl -X POST -H 'Content-type: application/json' --data '{"text" : "Hello"}' https://hooks.slack.com/services/ABCD/etc
+#
+#
+#
