@@ -1,0 +1,3 @@
+target 'github-actions' do
+  pod 'Analytics', '~> 4.1.1'
+end
