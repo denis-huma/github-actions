@@ -1,0 +1,18 @@
+name: Workflow_1
+
+on: workflow_dispatch # specific event - allows us manually trigger this workflow
+
+jobs:
+    first_job:
+        runs-on: macos-latest
+        steps:
+            - name: Show greeting
+              run: echo "Greeting..."
+            - name: Between step
+              run: |
+                echo "Between step 1"
+                echo "Between step 2"
+            - name: Show bye
+              run: echo "Bye..."
+
+
