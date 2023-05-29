@@ -38,6 +38,16 @@ jobs:
 
             - name: Test
               run: xcodebuild -workspace YourAppName.xcworkspace -scheme YourAppName -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12' test
+    third_job:
+        needs: [second_job]
+        runs-on: macos-latest
+        steps:
+            - name: Build Project
+              run: npm run build
+            - name: Deploy
+              run: echo "Deploying..."
+
+
 
 
 
