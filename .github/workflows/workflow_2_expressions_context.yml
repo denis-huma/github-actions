@@ -1,13 +1,13 @@
-name: Workflow_1
-
-# on: workflow_dispatch # specific event - allows us manually trigger this workflow
-on: push
-#         branches: [main]
-#     pull_request:
-#         branches: [main]
-
-
+name: Output information workflow
+on: workflow_dispatch
 jobs:
+    info:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Github context output
+              run: echo "${{ toJSON(github) }}"
+
+
     first_job:
         runs-on: macos-latest
         steps:

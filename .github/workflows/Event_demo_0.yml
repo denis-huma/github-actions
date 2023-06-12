@@ -1,0 +1,18 @@
+name: Event Demo 1
+on:
+    pull_request:
+        types: [opened]
+        # another way to write types
+        # types:
+        #     - opened
+        #     - edited
+    workflow_dispatch: # need to add : in the end even if we do not have any indented line further
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output event data
+              run: echo "${{ toJSON(github.event) }}"
+            - name: Get code
+              run: actions/checkout@3
