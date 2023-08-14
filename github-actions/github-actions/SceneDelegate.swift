@@ -22,6 +22,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 
-sudo cp -R [folder path to be copied] [destination]
 
-sudo cp -R /Users/denisyaremenko/Desktop/CICourses/CI/github-actions /Users/denisyaremenko/Desktop/CICourses/GithubActions
