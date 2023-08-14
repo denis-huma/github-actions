@@ -1,0 +1,16 @@
+name: CI workflow
+on: workflow_dispatch
+jobs:
+    first-job:
+        runs-on: macos-latest
+        steps:
+            - name: Step One
+              run: echo "Step 1"
+            - name: Step Two
+              run: echo "Step 2"
+              
+                
+              
+            
+
+
