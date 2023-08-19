@@ -13,8 +13,6 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                 name: distributed-files
-                path: |
-                    Resources
-                    SceneDelegate.swift
+                path: github-actions/test.json
 
             

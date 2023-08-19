@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		850D4F632A90E5EF00FB2D12 /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		8538FCAD2A19043D002E3FAA /* github-actions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-actions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8538FCB02A19043D002E3FAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8538FCB22A19043D002E3FAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		8538FCAF2A19043D002E3FAA /* github-actions */ = {
 			isa = PBXGroup;
 			children = (
+				850D4F632A90E5EF00FB2D12 /* test.json */,
 				85549FF12A1F3A18009C4A98 /* Resources */,
 				85549FE82A1F36A1009C4A98 /* Helpers */,
 				85549FE12A1F35D7009C4A98 /* Models */,
