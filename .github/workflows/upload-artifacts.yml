@@ -13,5 +13,5 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                 name: distributed-files
-                path: /Users/denisyaremenko/Desktop/Work/CI2023/github-actions/Resources
+                path: ./test.json
 
