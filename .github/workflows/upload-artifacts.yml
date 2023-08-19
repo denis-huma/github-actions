@@ -13,5 +13,5 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                 name: distributed-files
-                path: ./test.json
+                path: ./github-actions/test.json
 
