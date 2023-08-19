@@ -1,0 +1,20 @@
+name: Delpoy file
+on:
+    push:
+        branches:
+            - main
+jobs:
+    test:
+        runs-on: macos-latest
+        steps:
+            - name: Get code
+              uses: actions/checkout@v3
+            - name: Uplaod artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                name: distributed-files
+                path: |
+                    Resources
+                    SceneDelegate.swift
+
+            
