@@ -6,6 +6,9 @@ on:
 jobs:
     test:
         runs-on: macos-latest
+        defaults:
+        run:
+        working-directory: ./github-actions
         steps:
             - name: Get code
               uses: actions/checkout@v3
@@ -15,4 +18,4 @@ jobs:
                 name: distributed-files
                 path: github-actions/test.json
 
-            
+
