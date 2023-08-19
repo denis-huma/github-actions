@@ -22,7 +22,9 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                 name: artifa-files
-                path: github-actions/github-actions/test.json
+                path: |
+                    github-actions/github-actions/test.json
+                    Resources
     deploy:
         needs: buildxxx
         runs-on: macos-latest
