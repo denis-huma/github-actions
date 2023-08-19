@@ -16,7 +16,7 @@ jobs:
 
             - name: Publish JS filename
               id: publish_xxx
-              run: find dist/assets/*.json -type f -execdir echo 'script-file-xxx={}' >> $GITHUB_OUTPUT ';'
+              run: find github-actions/github-actions/*.json -type f -execdir echo 'script-file-xxx={}' >> $GITHUB_OUTPUT ';'
 
 #            - name: Uplaod artifacts
 #              uses: actions/upload-artifact@v3
