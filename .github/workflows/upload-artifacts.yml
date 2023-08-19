@@ -4,7 +4,7 @@ on:
         branches:
             - main
 jobs:
-    test:
+    build:
         runs-on: macos-latest
         steps:
             - name: Get code
@@ -12,6 +12,20 @@ jobs:
             - name: Uplaod artifacts
               uses: actions/upload-artifact@v3
               with:
-                name: distributed-files
-                path: ./github-actions/test.json
+                name: artifa-files
+                path: github-actions/test.json
+    deploy:
+        needs: build
+        runs-on: macos-latest
+        steps:
+            - name: Get build artifacts
+              uses: actions/download-artifact@v3
+              with:
+                name: artifa-files
+
+            - name: Output contents
+              run: ls #show all the files from artifa-files.zip
+            - name: Deploy
+              run: echo "Deploying..."
+
 
