@@ -6,8 +6,6 @@ on:
 jobs:
     test:
         runs-on: macos-latest
-        defaults:
-            working-directory: ./github-actions
         steps:
             - name: Get code
               uses: actions/checkout@v3
@@ -15,6 +13,6 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                 name: distributed-files
-                path: github-actions/test.json
+                path: /Users/denisyaremenko/Desktop/Work/CI2023/github-actions/test.json
 
 
