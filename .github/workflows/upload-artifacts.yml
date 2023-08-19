@@ -4,18 +4,27 @@ on:
         branches:
             - main
 jobs:
-    build:
+    buildxxx:
         runs-on: macos-latest
+
+        outputs:
+            script-file-xxx: ${{ steps.publish_xxx.outputs.script-file-xxx }}
+
         steps:
             - name: Get code
               uses: actions/checkout@v3
+
+            - name: Publish JS filename
+              id: publish_xxx
+              run: find dist/assets/*.json -type f -execdir echo 'script-file-xxx={}' >> $GITHUB_OUTPUT ';'
+
             - name: Uplaod artifacts
               uses: actions/upload-artifact@v3
               with:
                 name: artifa-files
                 path: github-actions/test.json
     deploy:
-        needs: build
+        needs: buildxxx
         runs-on: macos-latest
         steps:
             - name: Get build artifacts
@@ -25,6 +34,11 @@ jobs:
 
             - name: Output contents
               run: ls #show all the files from artifa-files.zip
+
+            - name: Output filename
+            # needs - docs.github.com/en/actions/learn-github-actions/contexts
+              run: echo "${{ needs.buildxxx.outputs.script-file-xxx }}"
+
             - name: Deploy
               run: echo "Deploying..."
 
