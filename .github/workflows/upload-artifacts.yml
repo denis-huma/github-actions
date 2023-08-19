@@ -18,11 +18,11 @@ jobs:
               id: publish_xxx
               run: find github-actions/github-actions/*.json -type f -execdir echo 'script-file-xxx={}' >> $GITHUB_OUTPUT ';'
 
-#            - name: Uplaod artifacts
-#              uses: actions/upload-artifact@v3
-#              with:
-#                name: artifa-files
-#                path: github-actions/test.json
+            - name: Uplaod artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                name: artifa-files
+                path: github-actions/github-actions/test.json
     deploy:
         needs: buildxxx
         runs-on: macos-latest
@@ -32,7 +32,7 @@ jobs:
               with:
                 name: artifa-files
 
-            - name: Output contents
+            - name: Output contents from artifa
               run: ls #show all the files from artifa-files.zip
 
             - name: Output filename
