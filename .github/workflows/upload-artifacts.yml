@@ -63,12 +63,14 @@ jobs:
                     ${{ runner.os }}-pods-
 
             - name: List of files from directory
-              run: ls -latest
+              run: |
+                cd github-actions
+                ls -latest
 
             - name: Install pod dependencies
               run: |
-                    cd github-actions
-                    pod install
+                cd github-actions
+                pod install
 
             - name: Get build artifacts
               uses: actions/download-artifact@v3
