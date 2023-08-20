@@ -64,7 +64,7 @@ jobs:
 
             - name: List of files from directory
               run: |
-                cd github-actions
+                cd github-actions/Pods
                 ls -latest
 
             - name: Install pod dependencies
