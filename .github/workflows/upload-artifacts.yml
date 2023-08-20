@@ -28,7 +28,7 @@ jobs:
                 # may contain dynamic element
                 # hashFile() - github function produces an unique value based on file path
                 # ** - no matter in which subfolder file could be
-                key: xxx-podfile-${{ hashFile('**/Podfile.lock') }}
+                key: xxx-podfile-${{ hashFiles('**/Podfile.lock') }}
 
             - name: Install pod dependencies
               run: |
