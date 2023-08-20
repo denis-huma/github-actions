@@ -63,9 +63,7 @@ jobs:
                     ${{ runner.os }}-pods-
 
             - name: Install pod dependencies
-              run: |
-                    cd github-actions
-                    pod install
+              run: pod install
 
             - name: Get build artifacts
               uses: actions/download-artifact@v3
