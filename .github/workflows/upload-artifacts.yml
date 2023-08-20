@@ -3,8 +3,16 @@ on:
     push:
         branches:
             - main
+            - develop
+env:
+    PROJECT_NAME: XXXGitHubAtionsProject
 jobs:
     buildxxx:
+    # env here will only be availabel only in buildxxx job
+        env:
+            PROJECT_USERNAME: Den
+            PROJECT_PASSWORD: 123
+
         runs-on: macos-latest
 
         outputs:
@@ -37,6 +45,11 @@ jobs:
                     cd github-actions
                     pod install
 
+            - name: Publish Variables
+              run: |
+                echo $PROJECT_NAME
+                echo $PROJECT_USERNAME
+                echo $PROJECT_PASSWORD
 
             - name: Publish Pod filename
               id: publish_xxx
