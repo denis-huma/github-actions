@@ -23,7 +23,7 @@ jobs:
                 # specify the files / folder that shoud be cached
                 # saved data after current job is done if it does not exist before in this folder
                 # but if new dependencies were installed in podfile - then stored new cache
-                path: ~/Podfile
+                path: ~/PodfilePath
                 # key - retrieveing by this key cache for the future
                 # may contain dynamic element
                 # hashFile() - github function produces an unique value based on file path
@@ -36,7 +36,7 @@ jobs:
                     pod install
 
 
-            - name: Publish JS filename
+            - name: Publish Pod filename
               id: publish_xxx
               run: find github-actions/github-actions/*.json -type f -execdir echo 'script-file-xxx={}' >> $GITHUB_OUTPUT ';'
 
@@ -47,7 +47,7 @@ jobs:
                 path: |
                     github-actions/github-actions/test.json
                     github-actions/github-actions/Resources
-    deploy:
+    deployxxx:
         needs: buildxxx
         runs-on: macos-latest
         steps:
