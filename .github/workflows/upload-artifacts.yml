@@ -23,12 +23,14 @@ jobs:
                 # specify the files / folder that shoud be cached
                 # saved data after current job is done if it does not exist before in this folder
                 # but if new dependencies were installed in podfile - then stored new cache
-                path: ~/PodfilePath
+                path: Pods
                 # key - retrieveing by this key cache for the future
                 # may contain dynamic element
                 # hashFile() - github function produces an unique value based on file path
-                # ** - no matter in which subfolder file could be
-                key: xxx-podfile-${{ hashFiles('**/Podfile.lock') }}
+                # ** - no matter in which subfolder it might be
+                key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+                restore-keys: |
+                    ${{ runner.os }}-pods-
 
             - name: Install pod dependencies
               run: |
@@ -51,6 +53,20 @@ jobs:
         needs: buildxxx
         runs-on: macos-latest
         steps:
+
+            - name: Cache dependencies
+              uses: actions/cache@v3
+              with:
+                path: Pods
+                key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+                restore-keys: |
+                    ${{ runner.os }}-pods-
+
+            - name: Install pod dependencies
+              run: |
+                    cd github-actions
+                    pod install
+
             - name: Get build artifacts
               uses: actions/download-artifact@v3
               with:
