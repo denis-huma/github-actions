@@ -47,7 +47,7 @@ jobs:
 
             - name: Publish Variables
               run: |
-                echo $PROJECT_NAME
+                echo 'Project name: $PROJECT_NAME'
                 echo $PROJECT_USERNAME
                 echo $PROJECT_PASSWORD
 
