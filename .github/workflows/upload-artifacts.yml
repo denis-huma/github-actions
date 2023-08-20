@@ -14,6 +14,28 @@ jobs:
             - name: Get code
               uses: actions/checkout@v3
 
+              # caching pod install for example
+              # must set before install podfile dependecies
+              # see extra infor in github.com/actions/cache
+            - name: Cache dependencies
+              uses: actions/cache@v3
+              with:
+                # specify the files / folder that shoud be cached
+                # saved data after current job is done if it does not exist before in this folder
+                # but if new dependencies were installed in podfile - then stored new cache
+                path: ~/Podfile
+                # key - retrieveing by this key cache for the future
+                # may contain dynamic element
+                # hashFile() - github function produces an unique value based on file path
+                # ** - no matter in which subfolder file could be
+                key: xxx-podfile-${{ hashFile('**/Podfile.lock') }}
+
+            - name: Install pod dependencies
+              run: |
+                    cd github-actions
+                    pod install
+
+
             - name: Publish JS filename
               id: publish_xxx
               run: find github-actions/github-actions/*.json -type f -execdir echo 'script-file-xxx={}' >> $GITHUB_OUTPUT ';'
