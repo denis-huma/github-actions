@@ -10,8 +10,7 @@ jobs:
     buildxxx:
     # env here will only be availabel only in buildxxx job
         env:
-            PROJECT_USERNAME: Den
-            PROJECT_PASSWORD: 123
+            PROJECT_NAME_SHORT: Github-Actions-Project
 
         runs-on: macos-latest
 
@@ -48,6 +47,8 @@ jobs:
             - name: Publish Variables
               run: |
                 echo "Project name: ${{ env.PROJECT_NAME }}"
+                echo "Short project name: ${{ env.PROJECT_NAME_SHORT }}"
+
                 echo "User name: ${{ secrets.PROJECT_USERNAME }}"
                 echo "User password: ${{ secrets.$PROJECT_PASSWORD }}"
 
