@@ -62,8 +62,13 @@ jobs:
                 restore-keys: |
                     ${{ runner.os }}-pods-
 
+            - name: List of files from directory
+              run: ls -latest
+
             - name: Install pod dependencies
-              run: pod install
+              run: |
+                    cd github-actions
+                    pod install
 
             - name: Get build artifacts
               uses: actions/download-artifact@v3
