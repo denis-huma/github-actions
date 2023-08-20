@@ -48,8 +48,8 @@ jobs:
             - name: Publish Variables
               run: |
                 echo "Project name: ${{ env.PROJECT_NAME }}"
-                echo $PROJECT_USERNAME
-                echo $PROJECT_PASSWORD
+                echo "User name: ${{ secrets.PROJECT_USERNAME }}"
+                echo "User password: ${{ secrets.$PROJECT_PASSWORD }}"
 
             - name: Publish Pod filename
               id: publish_xxx
