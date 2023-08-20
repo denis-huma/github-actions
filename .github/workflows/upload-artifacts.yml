@@ -50,7 +50,7 @@ jobs:
                 echo "Short project name: ${{ env.PROJECT_NAME_SHORT }}"
 
                 echo "User name: ${{ secrets.PROJECT_USERNAME }}"
-                echo "User password: ${{ secrets.$PROJECT_PASSWORD }}"
+                echo "User password: ${{ secrets.PROJECT_PASSWORD }}"
 
             - name: Publish Pod filename
               id: publish_xxx
