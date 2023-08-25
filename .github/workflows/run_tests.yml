@@ -10,11 +10,11 @@ on:
 
 jobs:
         build:
-        name: Run Tests Job
+        name: Test
         strategy:
-            matrix:
-            os: [ubuntu-latest, macos-latest]
-            swift: ["5.2", "5.3"]
+                matrix:
+                os: [ubuntu-latest, macos-latest]
+                swift: ["5.2", "5.3"]
 
         runs-on: ${{ matrix.os }}
         steps:
