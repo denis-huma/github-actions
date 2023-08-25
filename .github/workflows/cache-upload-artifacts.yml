@@ -1,3 +1,9 @@
+
+
+
+# [skip ci], [ci skip], [no ci], [skip acitons], [actions skip]
+# will skip workflow runs - add this messages to commit 
+
 name: Delpoy file
 on:
     push:
