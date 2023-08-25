@@ -10,7 +10,6 @@ on:
 
 jobs:
         build:
-        name: Test
         strategy:
                 matrix:
                 os: [ubuntu-latest, macos-latest]
