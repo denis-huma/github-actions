@@ -1,44 +1,21 @@
-name: Run test
-on:
-    push:
-        branches:
-         - main
+name: Swift
 
-    pull_request:
-        branches:
-         - main
+on: [push]
 
 jobs:
-        build:
-        strategy:
-                matrix:
-                os: [ubuntu-latest, macos-latest]
-                swift: ["5.2", "5.3"]
-
-        runs-on: ${{ matrix.os }}
-        steps:
-            - uses: swift-actions/setup-swift@65540b95f51493d65f5e59e97dcef9629ddf11bf
-              with:
-              swift-version: ${{ matrix.swift }}
-
-            - name: Install pod dependencies
-              uses: actions/checkout@v3
-              run: |
-                    cd github-actions
-                    pod install
-
-            - name: Force Xcode 14.3.1
-              run: sudo xcode-select -switch /Applications/Xcode_14.3.1.app
-            - name: iOS build setup
-              run: >-
-                xcodebuild test -workspace github-actions.xcodeproj/project.xcworkspace
-                -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone
-                11,OS=16.4'
-
-
-
-
-
-
-
-
+  build:
+    name: Swift ${{ matrix.swift }} on ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        swift: ["5.2", "5.3"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: swift-actions/setup-swift@65540b95f51493d65f5e59e97dcef9629ddf11bf
+        with:
+          swift-version: ${{ matrix.swift }}
+      - uses: actions/checkout@v3
+      - name: Build
+        run: swift build
+      - name: Run tests
+        run: swift test
