@@ -10,7 +10,7 @@ on:
 
 jobs:
         build:
-        name: Swift ${{ matrix.swift }} on ${{ matrix.os }}
+        name: ${{ matrix.swift }}
         strategy:
             matrix:
             os: [ubuntu-latest, macos-latest]
