@@ -10,7 +10,7 @@ on:
 
 jobs:
         build:
-        name: ${{ matrix.swift }}
+        name: Run Tests Job
         strategy:
             matrix:
             os: [ubuntu-latest, macos-latest]
