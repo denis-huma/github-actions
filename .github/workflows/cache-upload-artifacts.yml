@@ -8,7 +8,7 @@ name: Delpoy file
 on:
     push:
         branches:
-            - main
+#            - main
             - develop
 env:
     PROJECT_NAME: XXXGitHubAtionsProject
