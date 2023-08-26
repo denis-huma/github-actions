@@ -27,7 +27,7 @@ jobs:
 
       - name: iOS build setup
         run: >-
-          xcodebuild test -workspace github-actions.workspace
+          xcodebuild test -workspace github-actions.xworkspace
           -scheme github-actions -destination 'platform=iOS Simulator,name=iPhone
           11,OS=15'
 
