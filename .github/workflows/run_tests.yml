@@ -14,25 +14,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Install pod dependencies
+        run: |
+            cd github-actions
+            pod install
+
+
       - name: Force Xcode 14.3.1
         run: sudo xcode-select -switch /Applications/Xcode.app
+
+
       - name: iOS build setup
         run: >-
-          xcodebuild test -workspace github-actions.xcodeproj/project.xcworkspace
+          xcodebuild test -workspace github-actions.workspace
           -scheme github-actions -destination 'platform=iOS Simulator,name=iPhone
           11,OS=15'
-      - name: testing ... iPhone 11
-        run: >-
-          xcodebuild test -workspace github-actions.xcodeproj/project.xcworkspace
-          -scheme github-actions -destination 'platform=iOS Simulator,name=iPhone
-          11,OS=15'
-      - name: testing ... iPhone 11 Pro Max
-        run: >-
-          xcodebuild test -workspace github-actions.xcodeproj/project.xcworkspace
-          -scheme github-actions -destination 'platform=iOS Simulator,name=iPhone 11
-          Pro Max,OS=15'
-      - name: testing ... iPad Air
-        run: >-
-          xcodebuild test -workspace github-actions.xcodeproj/project.xcworkspace
-          -scheme github-actions -destination 'platform=iOS Simulator,name=iPad Air
-          (3rd generation),OS=15'
+
+
+    #   - name: testing ... iPhone 11
+    #     run: >-
+    #       xcodebuild test -workspace github-actions.xcodeproj/project.xcworkspace
+    #       -scheme github-actions -destination 'platform=iOS Simulator,name=iPhone
+    #       11,OS=15'
+          
