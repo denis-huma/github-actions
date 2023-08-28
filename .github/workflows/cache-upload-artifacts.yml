@@ -37,7 +37,7 @@ jobs:
             # success() - always return true when non of any previous step or job failed
             # always() / cancelled()
             # if-conditiion is also available on job lever, not only step level
-
+              run: echo "STEP run-testsss outcome: ${{ steps.run-testsss.outcome }}"
               if: failure() && steps.run-testsss.outcome == 'failure' # uncomment below line of code and comment it
              # continue-on-error: true
 
