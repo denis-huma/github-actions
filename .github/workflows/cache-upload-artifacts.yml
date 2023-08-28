@@ -38,8 +38,8 @@ jobs:
             # always() / cancelled()
             # if-conditiion is also available on job lever, not only step level
 
-#            if: failure() && steps.run-testsss.outcome == 'failure' # uncomment below line of code and comment it
-              continue-on-error: true
+            if: failure() && steps.run-testsss.outcome == 'failure' # uncomment below line of code and comment it
+             # continue-on-error: true
 
               run: |
                 echo "${{ steps.run-testsss.outcome }}"
