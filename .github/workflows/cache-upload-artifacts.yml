@@ -11,14 +11,27 @@ on:
             - main
             # - develop
 env:
-    PROJECT_NAME: XXXGitHubAtionsProject
+    PROJECT_NAME: GitHubAtionsProject
+
 jobs:
     JOB_1:
+        continue-on-error: true
+        strategy:
+            matrix:
+                operating-system: [macos-latest, ubuntu-latest]
+                include: # additional combinations
+                    - node-version: 18
+                      operating-system: ubuntu-latest
+                exclude:
+                    - node-version: 12
+                      operating-system: ubuntu-latest
+
+
     # env here will only be availabel only in JOB_1 job
         env:
             PROJECT_NAME_SHORT: Github-Actions-Project
 
-        runs-on: macos-latest
+        runs-on: ${{ matrix.operating-system }}
 
         outputs:
             script-file-xxx: ${{ steps.publish_xxx.outputs.script-file-xxx }}
@@ -92,6 +105,10 @@ jobs:
                 path: |
                     github-actions/github-actions/test.json
                     github-actions/github-actions/Resources
+    JOB_1_1:
+        needs: JOB_1
+        uses: ./.github/workflows/reusable.yml
+
     JOB_2:
         needs: JOB_1
         runs-on: macos-latest
