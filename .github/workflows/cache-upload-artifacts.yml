@@ -33,12 +33,14 @@ jobs:
               run: echo "Test continue on error"
 
             - name: Test if condition is FAILURE
-              continue-on-error: true
             # failure() - always return true when any previous step or job failed
             # success() - always return true when non of any previous step or job failed
             # always() / cancelled()
             # if-conditiion is also available on job lever, not only step level
-              if: failure() && steps.run-testsss.outcome == 'failure'
+
+#            if: failure() && steps.run-testsss.outcome == 'failure' # uncomment below line of code and comment it
+              continue-on-error: true
+
               run: |
                 echo "${{ steps.run-testsss.outcome }}"
                 echo "Test if condition step is launched and passed"
