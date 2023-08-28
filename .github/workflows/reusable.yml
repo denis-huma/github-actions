@@ -1,7 +1,7 @@
 name: Reusable Deploy
 on:
-workflow_call:
-    inputs: #reserved github word
+    workflow_call:
+      inputs: #reserved github word
         artifact-name:
             description: The name of the deployable artifact files
             required: false # whether this workflow should fail if we do not get input, if required is false then this workflow can be called without providing a value, if true - the value is needed
