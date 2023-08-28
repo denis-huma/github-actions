@@ -13,8 +13,8 @@ on:
 env:
     PROJECT_NAME: XXXGitHubAtionsProject
 jobs:
-    buildxxx:
-    # env here will only be availabel only in buildxxx job
+    JOB_1:
+    # env here will only be availabel only in JOB_1 job
         env:
             PROJECT_NAME_SHORT: Github-Actions-Project
 
@@ -38,6 +38,8 @@ jobs:
             # always() / cancelled()
             # if-conditiion is also available on job lever, not only step level
               if: failure() && steps.run-testsss.outcome == 'failure'
+              runc echo "$ {{ steps.run-testsss.outcome }}"
+              runt echo "$ {{ failure() }}"
               run: echo "Test if condition step is launched and passed"
 
 
@@ -86,8 +88,8 @@ jobs:
                 path: |
                     github-actions/github-actions/test.json
                     github-actions/github-actions/Resources
-    deployxxx:
-        needs: buildxxx
+    JOB_2:
+        needs: JOB_1
         runs-on: macos-latest
         steps:
             - name: Get code
@@ -121,13 +123,13 @@ jobs:
 
             - name: Output filename
             # needs - docs.github.com/en/actions/learn-github-actions/contexts
-              run: echo "${{ needs.buildxxx.outputs.script-file-xxx }}"
+              run: echo "${{ needs.JOB_1.outputs.script-file-xxx }}"
 
             - name: Deploy
               run: echo "Deploying..."
 
-    reportxxx:
-        needs: [buildxxx, deployxxx]
+    JOB_3:
+        needs: [JOB_1, JOB_2]
         if: failure() # if any of "needs" array jobs has failed
         runs-on: macos-latest
         steps:
