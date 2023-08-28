@@ -30,8 +30,9 @@ jobs:
               run: Pod install
 
             - name: Test continue on error
-              run: echo "Test continue on error"
-              run: echo "STEP run-testsss outcome: ${{ steps.run-testsss.outcome }}"
+              run: |
+                echo "Test continue on error"
+                echo "STEP run-testsss outcome: ${{ steps.run-testsss.outcome }}"
 
             - name: Test if condition is FAILURE
             # failure() - always return true when any previous step or job failed
