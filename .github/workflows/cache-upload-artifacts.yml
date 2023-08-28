@@ -123,7 +123,8 @@ jobs:
               run: echo "Deploying..."
 
     reportxxx:
-        if: failure()
+        needs: [buildxxx, deployxxx]
+        if: failure() # if any of "needs" array jobs has failed
         runs-on: macos-latest
         steps:
             - name: Output information
