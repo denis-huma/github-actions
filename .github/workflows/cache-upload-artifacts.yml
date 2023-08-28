@@ -39,8 +39,8 @@ jobs:
             # if-conditiion is also available on job lever, not only step level
               if: failure() && steps.run-testsss.outcome == 'failure'
               run: |
-                echo "$ {{ steps.run-testsss.outcome }}"
-                echo "$ {{ failure() }}"
+                echo "${{ steps.run-testsss.outcome }}"
+                echo "${{ failure() }}"
                 echo "Test if condition step is launched and passed"
 
 
