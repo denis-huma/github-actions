@@ -1,8 +1,23 @@
 name: Reusable Deploy
-on: workflow_call
+on:
+workflow_call:
+    inputs: #reserved github word
+        artifact-name:
+            description: The name of the deployable artifact files
+            required: false # whether this workflow should fail if we do not get input, if required is false then this workflow can be called without providing a value, if true - the value is needed
+            default: artifa # default value
+            type: string # expected kind of value here (number, boolean or string)
 jobs:
     deploy:
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
         steps:
+            - name: Get Code
+              uses: actions/download-artifact@3
+              with:
+                name: ${{ inputs.artifact-name }} # artifa-files - not reusable # see cache-upload-artifacts.yml
+
+            - name: List files
+              run:  ls
+
             - name: Output information
               run: echo "Deploying & uploading..."

@@ -18,13 +18,13 @@ jobs:
         continue-on-error: true
         strategy:
             matrix:
-                operating-system: [macos-latest]
-#                include: # additional combinations
-#                    - node-version: 18
-#                      operating-system: ubuntu-latest
-#                exclude:
-#                    - node-version: 12
-#                      operating-system: ubuntu-latest
+                operating-system: [macos-latest, ubuntu-latest]
+                include: # additional combinations
+                    - node-version: 18
+                      operating-system: ubuntu-latest
+                exclude:
+                    - node-version: 12
+                      operating-system: ubuntu-latest
 
 
     # env here will only be availabel only in JOB_1 job
@@ -38,7 +38,7 @@ jobs:
 
         steps:
             - name: Init step
-#              continue-on-error: true
+              continue-on-error: true
               id: run-testsss # name is up to you
               run: Pod install
 
@@ -108,6 +108,8 @@ jobs:
     JOB_1_1:
         needs: JOB_1
         uses: ./.github/workflows/reusable.yml
+        with:
+            artifact-name: artifa-files
 
     JOB_2:
         needs: JOB_1
