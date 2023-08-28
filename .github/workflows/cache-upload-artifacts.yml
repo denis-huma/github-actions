@@ -2,14 +2,14 @@
 
 
 # [skip ci], [ci skip], [no ci], [skip acitons], [actions skip]
-# will skip workflow runs - add this messages to commit 
+# will skip workflow runs - add this messages to commit
 
 name: Delpoy file
 on:
     push:
         branches:
-#            - main
-            - develop
+            - main
+            # - develop
 env:
     PROJECT_NAME: XXXGitHubAtionsProject
 jobs:
@@ -24,6 +24,19 @@ jobs:
             script-file-xxx: ${{ steps.publish_xxx.outputs.script-file-xxx }}
 
         steps:
+            - name: Init step
+              id: run-testsss # name is up to you
+              run: Pod install
+
+            - name: Test if condition is FAILURE
+            # failure() - always return true when any previous step or job failed
+            # success() - always return true when non of any previous step or job failed
+            # always() / cancelled()
+            # if-conditiion is also available on job lever, not only step level
+              if: failure() && steps.run-testsss.outcome == 'failure'
+              run: echo "Test if condition step is launched and passed"
+
+
             - name: Get code
               uses: actions/checkout@v3
 
@@ -108,5 +121,14 @@ jobs:
 
             - name: Deploy
               run: echo "Deploying..."
+
+    reportxxx:
+        if: failure()
+        runs-on: macos-latest
+        steps:
+            - name: Output information
+              run: |
+                echo "Something went wrong"
+                echo "${{ github }}"
 
 
