@@ -18,13 +18,13 @@ jobs:
         continue-on-error: true
         strategy:
             matrix:
-                operating-system: [macos-latest, ubuntu-latest]
-                include: # additional combinations
-                    - node-version: 18
-                      operating-system: ubuntu-latest
-                exclude:
-                    - node-version: 12
-                      operating-system: ubuntu-latest
+                operating-system: [macos-latest]
+#                include: # additional combinations
+#                    - node-version: 18
+#                      operating-system: ubuntu-latest
+#                exclude:
+#                    - node-version: 12
+#                      operating-system: ubuntu-latest
 
 
     # env here will only be availabel only in JOB_1 job
