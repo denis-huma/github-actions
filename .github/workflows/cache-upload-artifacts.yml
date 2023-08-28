@@ -28,6 +28,10 @@ jobs:
               id: run-testsss # name is up to you
               run: Pod install
 
+            - name: Test continue on error
+              continue-on-error: true #
+              run: echo "Test continue on error"
+
             - name: Test if condition is FAILURE
             # failure() - always return true when any previous step or job failed
             # success() - always return true when non of any previous step or job failed
