@@ -25,7 +25,7 @@ jobs:
 
         steps:
             - name: Init step
-              continue-on-error: true
+#              continue-on-error: true
               id: run-testsss # name is up to you
               run: Pod install
 
@@ -39,7 +39,7 @@ jobs:
             # success() - always return true when non of any previous step or job failed
             # always() / cancelled()
             # if-conditiion is also available on job lever, not only step level
-              if: steps.run-testsss.outcome == 'failure' # uncomment below line of code and comment it
+              if: failure() && steps.run-testsss.outcome == 'failure' # uncomment below line of code and comment it
              # continue-on-error: true
 
               run: |
