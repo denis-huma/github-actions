@@ -25,11 +25,11 @@ jobs:
 
         steps:
             - name: Init step
+              continue-on-error: true
               id: run-testsss # name is up to you
               run: Pod install
 
             - name: Test continue on error
-              continue-on-error: true
               run: echo "Test continue on error"
 
             - name: Test if condition is FAILURE
