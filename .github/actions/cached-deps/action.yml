@@ -1,0 +1,25 @@
+name: 'Get & Cache Dependecies'
+description: 'Get the dependencies (via podfile) and cache them'
+runs:
+    using: 'composite'
+    steps:
+        - name: Cache dependencies
+          id: cache
+          uses: actions/cache@v3
+          with:
+            path: github-actions/Pods
+            key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+            restore-keys: |
+                ${{ runner.os }}-pods-
+
+        - name: List of files from directory
+          run: |
+                cd github-actions
+                ls -latest
+
+        - name: Install pod dependencies
+          run: |
+                cd github-actions
+                pod install
+          shell: bash
+

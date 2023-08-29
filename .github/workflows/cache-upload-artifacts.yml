@@ -128,23 +128,28 @@ jobs:
             - name: Get code
               uses: actions/checkout@v3
 
-            - name: Cache dependencies
-              uses: actions/cache@v3
-              with:
-                path: github-actions/Pods
-                key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-                restore-keys: |
-                    ${{ runner.os }}-pods-
+            - name: Load & cache dependencies # with custom action
+              uses: ./.github/actions/cached-deps
 
-            - name: List of files from directory
-              run: |
-                cd github-actions
-                ls -latest
 
-            - name: Install pod dependencies
-              run: |
-                cd github-actions
-                pod install
+# Uncommit in order to swap out custom action with these lines of code
+            # - name: Cache dependencies
+            #   uses: actions/cache@v3
+            #   with:
+            #     path: github-actions/Pods
+            #     key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+            #     restore-keys: |
+            #         ${{ runner.os }}-pods-
+
+            # - name: List of files from directory
+            #   run: |
+            #     cd github-actions
+            #     ls -latest
+
+            # - name: Install pod dependencies
+            #   run: |
+            #     cd github-actions
+            #     pod install
 
             - name: Get build artifacts
               uses: actions/download-artifact@v3
