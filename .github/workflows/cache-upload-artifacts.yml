@@ -130,6 +130,8 @@ jobs:
 
             - name: Load & cache dependencies # with custom action
               uses: ./.github/actions/cached-deps
+              with:
+                caching: 'false'
 
 
 # Uncommit in order to swap out custom action with these lines of code

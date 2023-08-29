@@ -1,10 +1,20 @@
 name: 'Get & Cache Dependecies'
 description: 'Get the dependencies (via podfile) and cache them'
+inputs:
+    cachinggg:
+        description: 'Whether to cache dependecies or not'
+        required: false
+        # true - user must provide a value in the workflow using this action
+        # false - valus is not actually needed
+        default: 'true' # can set any value, not only true,false...
+
+
 runs:
     using: 'composite'
     steps:
         - name: Cache dependencies
-          id: cache
+          if: inputs.cachinggg == 'true'
+          id: cacheID
           uses: actions/cache@v3
           with:
             path: github-actions/Pods
@@ -12,13 +22,8 @@ runs:
             # restore-keys: |
             #     ${{ runner.os }}-pods-
 
-        - name: List of files from directory
-          run: |
-                cd github-actions
-                ls -latest
-          shell: bash
-
         - name: Install pod dependencies
+          if: steps.cache.outputs.cache-hit != 'true' || inputs.cachinggg != 'true'
           run: |
                 cd github-actions
                 pod install
