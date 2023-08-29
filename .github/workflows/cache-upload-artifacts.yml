@@ -110,6 +110,16 @@ jobs:
         uses: ./.github/workflows/reusable.yml
         with:
             artifact-name: artifa-files
+        # secrets: # optional
+        #    some-secret: ${{ secrets.some-secret }}
+
+    JOB_1_2:
+        needs: JOB_1_1
+        runs-on: macos-latest
+        steps:
+            - name: Print deploy output
+              run: echo "${{ needs.JOB_1_1.outputs.result }}"
+
 
     JOB_2:
         needs: JOB_1

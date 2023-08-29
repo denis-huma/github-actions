@@ -1,14 +1,24 @@
 name: Reusable Deploy
 on:
     workflow_call:
-      inputs: #reserved github word
+      inputs: #reserved github word - consider it like an arguments in function
         artifact-name:
             description: The name of the deployable artifact files
             required: false # whether this workflow should fail if we do not get input, if required is false then this workflow can be called without providing a value, if true - the value is needed
             default: artifa # default value
             type: string # expected kind of value here (number, boolean or string)
+      # secrets: # optional
+        # some-secret:
+            # required: false
+      output:
+        result:
+            description: The result of the deployment operation
+            value: ${{ jobs.deployx.outputs.outcome }}
+
 jobs:
-    deploy:
+    deployx:
+        outputs:
+            outcome: ${{ steps.set-results.outputs.step-result }}
         runs-on: macos-latest
         steps:
             - name: Get Code
@@ -21,3 +31,16 @@ jobs:
 
             - name: Output information
               run: echo "Deploying & uploading..."
+
+            - name: Set result output
+              id: set-result
+              run: echo "step-result=success" >> $GITHUB_OUTPUT # string 'success' would be stored in step-result
+
+
+
+
+
+
+
+
+
