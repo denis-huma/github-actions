@@ -129,9 +129,13 @@ jobs:
               uses: actions/checkout@v3
 
             - name: Load & cache dependencies # with custom action
+              id: cache-deps
               uses: ./.github/actions/cached-deps
               with:
                 caching: 'false'
+
+            - name: Output info
+              run: echo "Cached used? ${{ steps.cache-deps.outputs.used-cached }}"
 
 
 # Uncommit in order to swap out custom action with these lines of code

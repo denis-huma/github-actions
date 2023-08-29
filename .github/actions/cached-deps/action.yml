@@ -8,6 +8,11 @@ inputs:
         # false - valus is not actually needed
         default: 'true' # can set any value, not only true,false...
 
+outputs:
+    used-cache:
+        description: 'Whether the cache was used'
+        value: ${{ steps.installDp.outputs.cache }}
+
 
 runs:
     using: 'composite'
@@ -23,9 +28,11 @@ runs:
             #     ${{ runner.os }}-pods-
 
         - name: Install pod dependencies
+          id: installDep
           if: steps.cache.outputs.cache-hit != 'true' || inputs.cachinggg != 'true'
           run: |
                 cd github-actions
                 pod install
+                echo "cache=${{ inputs.cachinggg }}" >> $GITHUB_OUTPUT
           shell: bash
 
