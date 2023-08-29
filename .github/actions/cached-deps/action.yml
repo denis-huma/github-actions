@@ -16,10 +16,11 @@ runs:
           run: |
                 cd github-actions
                 ls -latest
+          shell: bash
 
         - name: Install pod dependencies
           run: |
                 cd github-actions
                 pod install
-        #   shell: bash
+          shell: bash
 
