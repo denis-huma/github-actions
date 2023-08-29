@@ -10,7 +10,7 @@ on:
       # secrets: # optional
         # some-secret:
             # required: false
-      output:
+      outputs:
         result:
             description: The result of the deployment operation
             value: ${{ jobs.deployx.outputs.outcome }}
