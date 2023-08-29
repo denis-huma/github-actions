@@ -5,7 +5,7 @@ on:
       - opened
 
 jobs:
-  assing_label:
+  assign_label:
     runs-on: macos-latest
     run: |
             issue_title="${{ github.event.issue.title }}"
