@@ -4,8 +4,14 @@ on:
     types:
       - opened
 
+# permissions: - can set permission on workflow level
+# to see all the allowed persmission -
+# https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+
 jobs:
   assign_label:
+  permissions: # read-all - all the permissions in githbut list like actions, checks, contents, deployments, id-token, issues
+    issues: write # need write access, the other permissions are not granted by default if we set any persmission here
     runs-on: macos-latest
     steps:
         - name: Assing Label
