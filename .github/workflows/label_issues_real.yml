@@ -4,7 +4,8 @@ on:
 #    types:
 #      - closed
     push:
-        - develop
+        branches:
+         - develop
 
 # permissions: - can set permission on workflow level
 # to see all the allowed persmission -
