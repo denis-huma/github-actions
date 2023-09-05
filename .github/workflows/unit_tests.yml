@@ -1,0 +1,47 @@
+name: Run Unit Tests
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    name: Build and Test default scheme using iPhone
+    runs-on: macos-latest
+
+    env:
+      DERIVED_DATA_PATH: ${{ 'github-actions.xcworkspace/DerivedData' }}
+      XC_VERSION: ${{ '13_3' }}
+      XC_WORKSPACE: ${{ 'github-actions.xcworkspace' }}
+      XC_SCHEME: ${{ 'github-actions'}}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install pod dependencies
+        run: |
+            cd github-actions
+            pod install
+
+
+      - name: Force Xcode 14.3.1
+        run: sudo xcode-select -switch /Applications/Xcode.app
+
+      - name: Huma SDK Example Unit Tests
+        run: |
+            mkdir $DERIVED_DATA_PATH
+            xcodebuild test "$PR_NUMBER" "$GITHUB_REPOSITORY" "$XC_WORKSPACE" "platform=iOS Simulator,name=iPhone 11 Pro" "$DERIVED_DATA_PATH"
+            --scheme "$XC_SCHEME"
+            --upload-test-results
+
+
+      - name: Upload unit test results
+        uses: actions/upload-artifact@v1
+        with:
+            name: TestLogs
+            path: "${{env.DERIVED_DATA_PATH}}/Logs/Test"
