@@ -16,7 +16,7 @@ jobs:
     #   DERIVED_DATA_PATH: ${{ 'github-actions.xcworkspace/DerivedData' }}
       XC_VERSION: ${{ '13_3' }}
       XC_WORKSPACE: ${{ 'github-actions.xcworkspace' }}
-      XC_SCHEME: ${{ 'github-actions'}}
+      XC_SCHEME: ${{ 'github-actions' }}
       PR_NUMBER: ${{ github.event.pull_request.number }}
 
     steps:
@@ -40,14 +40,11 @@ jobs:
 
       - name: Huma SDK Example Unit Tests
         run: |
-            ls -la
-            cd github-actions
-            ls -la
             xcodebuild test -project github-actions.xcodeproj \
-            --scheme ${{ env.XC_SCHEME }} \
-            --upload-test-results
-            --sdk iphonesimulator \
-            --destination 'platform=iOS Simulator,name=iPhone 12,OS=15.0'
+            -scheme github-actions \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.0'
+            -upload-test-results
 
 
     #   - name: Upload unit test results
