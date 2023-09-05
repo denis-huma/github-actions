@@ -31,7 +31,7 @@ jobs:
 
       - name: Install pod dependencies
         run: |
-            cd github-actions/github-actions
+            cd github-actions
             pod install
 
 
@@ -40,7 +40,7 @@ jobs:
 
       - name: Huma SDK Example Unit Tests
         run: |
-            cd github-actions
+            cd github-actions/github-actions
             ls -la
             xcodebuild test -project github-actions.xcodeproj \
             -scheme github-actions \
