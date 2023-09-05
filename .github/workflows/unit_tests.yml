@@ -39,7 +39,7 @@ jobs:
 
       - name: Huma SDK Example Unit Tests
         run: |
-            cd ..
+            
             ls -la
             xcodebuild test -project github-actions.xcodeproj \
             -scheme github-actions \
