@@ -1,30 +1,30 @@
-name: Label Issues (Permissions Example)
-on:
-#  issues:
-#    types:
-#      - closed
-    push:
-        branches:
-         - develop
-
-# permissions: - can set permission on workflow level
-# to see all the allowed persmission -
-# https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
-
-jobs:
-  assign_label:
-  permissions: # read-all - all the permissions in githbut list like actions, checks, contents, deployments, id-token, issues
-    issues: write # need write access, the other permissions are not granted by default if we set any persmission here
-    runs-on: macos-latest
-    steps:
-        - name: Assing Label
-          if: contains(github.event.issue.title, 'bug')
-          run: |
-            curl -X POST \
-            --url https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
-            -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-            -H 'content-type: application/json' \
-            -d '{
-                "labels": ["bug"]
-            }' \
-            --fail
+#name: Label Issues (Permissions Example)
+#on:
+##  issues:
+##    types:
+##      - closed
+#    push:
+#        branches:
+#         - develop
+#
+## permissions: - can set permission on workflow level
+## to see all the allowed persmission -
+## https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+#
+#jobs:
+#  assign_label:
+#  permissions: # read-all - all the permissions in githbut list like actions, checks, contents, deployments, id-token, issues
+#    issues: write # need write access, the other permissions are not granted by default if we set any persmission here
+#    runs-on: macos-latest
+#    steps:
+#        - name: Assing Label
+#          if: contains(github.event.issue.title, 'bug')
+#          run: |
+#            curl -X POST \
+#            --url https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
+#            -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+#            -H 'content-type: application/json' \
+#            -d '{
+#                "labels": ["bug"]
+#            }' \
+#            --fail
