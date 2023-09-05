@@ -40,8 +40,8 @@ jobs:
 
       - name: Huma SDK Example Unit Tests
         run: |
-            cd github-actions/github-actions
-            ls -la
+#            cd github-actions/github-actions
+#            ls -la
             xcodebuild test -project github-actions.xcodeproj \
             -scheme github-actions \
             -sdk iphonesimulator \
