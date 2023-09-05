@@ -31,7 +31,7 @@ jobs:
 
       - name: Install pod dependencies
         run: |
-            cd github-actions
+            cd github-actions/github-actions
             pod install
 
 
