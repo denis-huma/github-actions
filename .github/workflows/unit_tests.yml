@@ -2,10 +2,10 @@ name: Run Unit Tests
 on:
   push:
     branches:
-      - main
+      - develop
   pull_request:
     branches:
-      - main
+      - develop
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-latest
 
     env:
-      DERIVED_DATA_PATH: ${{ 'github-actions.xcworkspace/DerivedData' }}
+    #   DERIVED_DATA_PATH: ${{ 'github-actions.xcworkspace/DerivedData' }}
       XC_VERSION: ${{ '13_3' }}
       XC_WORKSPACE: ${{ 'github-actions.xcworkspace' }}
       XC_SCHEME: ${{ 'github-actions'}}
@@ -34,7 +34,12 @@ jobs:
 
       - name: Huma SDK Example Unit Tests
         run: |
-            mkdir $DERIVED_DATA_PATH
+            echo ls -la
+            ls -la
+            cd github-actions
+            echo ls - la
+            ls -la
+            mkdir DERIVED_DATA_PATH
             xcodebuild test "$PR_NUMBER" "$GITHUB_REPOSITORY" "$XC_WORKSPACE" "platform=iOS Simulator,name=iPhone 11 Pro" "$DERIVED_DATA_PATH"
             --scheme "$XC_SCHEME"
             --upload-test-results
