@@ -2,7 +2,7 @@ name: Label Issues (Permissions Example)
 on:
   issues:
     types:
-      - opened
+      - closed
 
 # permissions: - can set permission on workflow level
 # to see all the allowed persmission -

@@ -8,8 +8,8 @@ name: Delpoy file
 on:
     push:
         branches:
-            - main
-            # - develop
+            - develop
+            # - main
 env:
     PROJECT_NAME: GitHubAtionsProject
 
