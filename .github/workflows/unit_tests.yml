@@ -44,7 +44,7 @@ jobs:
             xcodebuild test -project github-actions.xcodeproj \
             -scheme github-actions \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.0'
+            -destination 'platform=iOS Simulator,OS=15.0,name=iPhone 12 Pro'
             -upload-test-results
 
 
