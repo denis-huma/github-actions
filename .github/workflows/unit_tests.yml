@@ -34,12 +34,13 @@ jobs:
             cd github-actions
             pod install
 
-
       - name: Force Xcode 14.3.1
         run: sudo xcode-select -switch /Applications/Xcode.app
 
       - name: Huma SDK Example Unit Tests
         run: |
+            cd ..
+            ls -la
             xcodebuild test -project github-actions.xcodeproj \
             -scheme github-actions \
             -sdk iphonesimulator \
