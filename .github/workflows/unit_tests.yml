@@ -20,6 +20,12 @@ jobs:
       PR_NUMBER: ${{ github.event.pull_request.number }}
 
     steps:
+
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -34,19 +40,18 @@ jobs:
 
       - name: Huma SDK Example Unit Tests
         run: |
-            echo ls -la
             ls -la
             cd github-actions
-            echo ls - la
             ls -la
-            mkdir DERIVED_DATA_PATH
-            xcodebuild test "$PR_NUMBER" "$GITHUB_REPOSITORY" "$XC_WORKSPACE" "platform=iOS Simulator,name=iPhone 11 Pro" "$DERIVED_DATA_PATH"
-            --scheme "$XC_SCHEME"
+            xcodebuild test -project github-actions.xcodeproj \
+            --scheme ${{ env.XC_SCHEME }} \
             --upload-test-results
+            --sdk iphonesimulator \
+            --destination 'platform=iOS Simulator,name=iPhone 12,OS=15.0'
 
 
-      - name: Upload unit test results
-        uses: actions/upload-artifact@v1
-        with:
-            name: TestLogs
-            path: "${{env.DERIVED_DATA_PATH}}/Logs/Test"
+    #   - name: Upload unit test results
+    #     uses: actions/upload-artifact@v1
+    #     with:
+    #         name: TestLogs
+    #         path: "${{env.DERIVED_DATA_PATH}}/Logs/Test"
