@@ -1,8 +1,8 @@
 name: Workflow Commands
 on: [push]
-defaults:
-    run:
-        shell: bash
+# defaults:
+    # run:
+        # shell: bash
         # working-directory: /de/ed
 
 jobs:
@@ -45,4 +45,4 @@ jobs:
                 print(platform.processor())
 
 
-    
+
