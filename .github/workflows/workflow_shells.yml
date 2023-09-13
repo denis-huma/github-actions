@@ -9,6 +9,10 @@ jobs:
     display-wd-info:
         runs-on: macos-latest
         steps:
+            - name: show JS greenting
+              uses: actions/hello-world-javascript-action@main
+              with:
+                who-to-greet: 'Huma Network'
             - name: Display working directory and list files
               run: |
                 pwd
