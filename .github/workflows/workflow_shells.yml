@@ -1,8 +1,8 @@
 name: Workflow Commands
 on: [push]
-# defaults:
-    # run:
-        # shell: bash
+defaults:
+    run:
+        shell: bash
         # working-directory: /de/ed
 
 jobs:
@@ -10,9 +10,14 @@ jobs:
         runs-on: macos-latest
         steps:
             - name: show JS greenting
+              id: greet
               uses: actions/hello-world-javascript-action@main
               with:
                 who-to-greet: 'Huma Network'
+
+            - name: Log greeting time
+              run: echo "${{steps.greet.outputs.time}}" # time is a param regarding https://github.com/actions/hello-world-javascript-action
+
             - name: Display working directory and list files
               run: |
                 pwd
@@ -45,4 +50,4 @@ jobs:
                 print(platform.processor())
 
 
-
+    
