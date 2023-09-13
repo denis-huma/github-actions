@@ -19,7 +19,7 @@ jobs:
 
     dependant-job:
         runs-on: windows-latest
-        needs: [first_run_job]
+        needs: [testing-wf-commands]
         steps:
             - name: dependant job step
               run: Write-Output "Windows String"
