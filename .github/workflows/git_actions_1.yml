@@ -20,6 +20,19 @@ jobs:
             - name: Setting a notice message with params
               run: echo "::notice title:Notice title,file=app.js,line=2,endline=3,col=5,endColumn=7::Missing semicolon"
 
+            - name: Group of logs
+              run: |
+                echo "::group::Group logs"
+                echo "Inside group"
+                echo "::endgroup::"
+
+            - name: Masking a value
+              run: echo "::add-mask::Secret string"
+
+            - name: Echo a secret
+              run: echo "Secret string"
+
+
 
             # - name: Multiple commands
             #   run: |
