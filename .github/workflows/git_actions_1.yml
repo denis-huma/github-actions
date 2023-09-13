@@ -21,7 +21,7 @@ jobs:
         runs-on: windows-latest
         needs: [first_run_job]
         steps:
-            - name: testing-wf-commands
+            - name: dependant job step
               run: Write-Output "Windows String"
             - name: Error Step
               run: doesnotexist
