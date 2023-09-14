@@ -1,0 +1,19 @@
+name: Stale Issues & PR
+on:
+    schedule: # see web crontab.guru
+        - cron: "0 15 * * *" # everyday on 15
+        - cron: "0/5 * * * *" # every 5 minutes
+
+
+jobs:
+    stale:
+        runs-on: macos-latest
+        steps:
+            - uses: actions/stale@v8 # Warns and then closes issues and PRs that have had no activity for a specified amount of time.
+              with:
+                stale-issue-message: "First message"
+                days-before-stale: 1 # only one day
+                days-before-close: 5 # how many days PR state would be opened before close
+
+
+ 
