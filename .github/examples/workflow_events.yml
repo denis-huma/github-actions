@@ -1,0 +1,46 @@
+name: Repository Events
+on:
+    push:
+        # trigger only if all below conditions are met (branches, tags, paths)
+        branches: # cannot use branches & branches-ignore at the same time
+            - main
+            - features
+            - "feature/*" # any branch matches feature/featA, feature/featB, but does not match feature/featA/featB
+            - "feature/**"
+            - "!feature/featA" # ORDER is IMPORTANT HERE
+
+        # branches-ignore: # cannot use branches & branches-ignore at the same time
+        #     - develop
+        #     - feature/featA
+
+        tags:
+            - v1.* # match v1.1 v1.1.2
+            - "!v1.1.1"
+
+        paths:
+            - "**.js"
+            - "!app.js"
+
+
+    pull_request:
+        types: [opened, assigned, reopened, sychronize]
+        branches:
+            - main
+        paths:
+            - "**.js" # workflow will run only in PR on main branch with any .js file changed
+
+
+    issues:
+        types: [opened]
+
+jobs:
+    checkout-test:
+        runs-on: macos-latest
+        steps:
+            - name: checkout step
+              run: |
+                echo $GITHUB_SHA
+                echo $GITHUB_REF
+            - uses: actions/checkout@v3
+
+

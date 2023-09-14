@@ -1,0 +1,9 @@
+name: Manually Triggered
+on:
+    workflow_dispatch:
+
+jobs:
+    log-info:
+        runs-on: macos-latest
+        steps:
+            - run: edcho $GITHUB_REF

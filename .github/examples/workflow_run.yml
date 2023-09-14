@@ -1,9 +1,10 @@
-name: Workflow2 after Workflow1
+name: Workflow Depending
 on:
-#    workflow_dispatch:
     workflow_run:
         workflows: [Repository Events]
         types: [completed]
+        branches:
+            - main # extra filtering here if workflow 'repository events' runs on main branch
 
 jobs:
     echo-string:
