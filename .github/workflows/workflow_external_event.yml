@@ -1,0 +1,40 @@
+name: External Events
+on:
+    repository_dispatch:
+        types: [build]
+
+jobs:
+    echo-a-string:
+        runs-on: macos-latest
+        steps:
+            - run: echo ${{ github.event.client_payload.env }} # will return "production"
+
+
+
+# # Run this request in POSTMAN in order to launch aforementioned workflow
+# request type: POST
+# url: https://api.github.com/repos/{owner}/{repo}/dispatches
+
+# headers:
+#     Accept: application/vnd.github+json
+#     X-GitHub-Api-Version: 2022-11-28
+
+# body:
+#     {
+#         "event_type": "build",
+#         "client_payload": {
+#             "env": "production"
+#         }
+#     }
+
+
+
+
+
+
+
+
+
+
+
+    
