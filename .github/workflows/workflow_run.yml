@@ -1,6 +1,6 @@
 name: Workflow2 after Workflow1
 on:
-    workflow_dispatch:
+#    workflow_dispatch:
     workflow_run:
         workflows: [Repository Events]
         types: [completed]
