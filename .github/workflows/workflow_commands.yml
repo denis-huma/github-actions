@@ -1,58 +1,58 @@
-name: Workflow Commands
-on: [push]
-
-jobs:
-    testing-wf-commands:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Setting an error message
-              run: echo "::error::Missing semicolon"
-
-            - name: Setting an error message with params
-              run: echo "::error title:Error title,file=app.js,line=2,endline=3,col=5,endColumn=7::Missing semicolon"
-
-            - name: Setting a debug message with params
-              run: echo "::debug title:Debug title,file=app.js,line=2,endline=3,col=5,endColumn=7::Missing semicolon"
-
-            - name: Setting a warning message with params
-              run: echo "::warning title:Warning title,file=app.js,line=2,endline=3,col=5,endColumn=7::Missing semicolon"
-
-            - name: Setting a notice message with params
-              run: echo "::notice title:Notice title,file=app.js,line=2,endline=3,col=5,endColumn=7::Missing semicolon"
-
-            - name: Group of logs
-              run: |
-                echo "::group::Group logs"
-                echo "Inside group"
-                echo "::endgroup::"
-
-            - name: Masking a value
-              run: echo "::add-mask::Secret string"
-
-            - name: Echo a secret
-              run: echo "Secret string"
-
-
-
-            # - name: Multiple commands
-            #   run: |
-            #     node -v
-
-    # run-job-2-parallel:
-    #     runs-on: macos-latest
-    #     steps:
-    #         - name: Check software version
-    #           run: sw-vers
-
-    # dependant-job:
-    #     runs-on: windows-latest
-    #     needs: [first_run_job]
-    #     steps:
-    #         - name: testing-wf-commands
-    #           run: Write-Output "Windows String"
-    #         - name: Error Step
-    #           run: doesnotexist
-
-
-
-
+#name: Workflow Commands
+#on: [push]
+#
+#jobs:
+#    testing-wf-commands:
+#        runs-on: ubuntu-latest
+#        steps:
+#            - name: Setting an error message
+#              run: echo "::error::Missing semicolon"
+#
+#            - name: Setting an error message with params
+#              run: echo "::error title:Error title,file=app.js,line=2,endline=3,col=5,endColumn=7::Missing semicolon"
+#
+#            - name: Setting a debug message with params
+#              run: echo "::debug title:Debug title,file=app.js,line=2,endline=3,col=5,endColumn=7::Missing semicolon"
+#
+#            - name: Setting a warning message with params
+#              run: echo "::warning title:Warning title,file=app.js,line=2,endline=3,col=5,endColumn=7::Missing semicolon"
+#
+#            - name: Setting a notice message with params
+#              run: echo "::notice title:Notice title,file=app.js,line=2,endline=3,col=5,endColumn=7::Missing semicolon"
+#
+#            - name: Group of logs
+#              run: |
+#                echo "::group::Group logs"
+#                echo "Inside group"
+#                echo "::endgroup::"
+#
+#            - name: Masking a value
+#              run: echo "::add-mask::Secret string"
+#
+#            - name: Echo a secret
+#              run: echo "Secret string"
+#
+#
+#
+#            # - name: Multiple commands
+#            #   run: |
+#            #     node -v
+#
+#    # run-job-2-parallel:
+#    #     runs-on: macos-latest
+#    #     steps:
+#    #         - name: Check software version
+#    #           run: sw-vers
+#
+#    # dependant-job:
+#    #     runs-on: windows-latest
+#    #     needs: [first_run_job]
+#    #     steps:
+#    #         - name: testing-wf-commands
+#    #           run: Write-Output "Windows String"
+#    #         - name: Error Step
+#    #           run: doesnotexist
+#
+#
+#
+#

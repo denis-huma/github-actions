@@ -1,53 +1,53 @@
-name: Workflow Commands
-on: [push]
-defaults:
-    run:
-        shell: bash
-        # working-directory: /de/ed
-
-jobs:
-    display-wd-info:
-        runs-on: macos-latest
-        steps:
-            - name: show JS greenting
-              id: greet
-              uses: actions/hello-world-javascript-action@main
-              with:
-                who-to-greet: 'Huma Network'
-
-            - name: Log greeting time
-              run: echo "${{steps.greet.outputs.time}}" # time is a param regarding https://github.com/actions/hello-world-javascript-action
-
-            - name: Display working directory and list files
-              run: |
-                pwd
-                ls -la
-                echo $GITHUB_SHA
-                echo $GITHUB_REPOSITORY
-                echo $GITHUB_WORKSPACE
-            - name: Change working directory
-              working-directory: /home/runner
-              run: pwd
-
-    display-dr-info-windows:
-        runs-on: windows-latest
-        defaults:
-            run:
-                shell: pwsh
-        steps:
-            - name: Display working directory
-              run: |
-                Get-Location
-                dir
-                echo $env.GITHUB_SHA
-                echo $env.GITHUB_REPOSITORY
-                echo $env.GITHUB_WORKSPACE
-
-            - name: Python Shell
-              shell: python
-              run: |
-                import platform
-                print(platform.processor())
-
-
-    
+#name: Workflow Commands
+#on: [push]
+#defaults:
+#    run:
+#        shell: bash
+#        # working-directory: /de/ed
+#
+#jobs:
+#    display-wd-info:
+#        runs-on: macos-latest
+#        steps:
+#            - name: show JS greenting
+#              id: greet
+#              uses: actions/hello-world-javascript-action@main
+#              with:
+#                who-to-greet: 'Huma Network'
+#
+#            - name: Log greeting time
+#              run: echo "${{steps.greet.outputs.time}}" # time is a param regarding https://github.com/actions/hello-world-javascript-action
+#
+#            - name: Display working directory and list files
+#              run: |
+#                pwd
+#                ls -la
+#                echo $GITHUB_SHA
+#                echo $GITHUB_REPOSITORY
+#                echo $GITHUB_WORKSPACE
+#            - name: Change working directory
+#              working-directory: /home/runner
+#              run: pwd
+#
+#    display-dr-info-windows:
+#        runs-on: windows-latest
+#        defaults:
+#            run:
+#                shell: pwsh
+#        steps:
+#            - name: Display working directory
+#              run: |
+#                Get-Location
+#                dir
+#                echo $env.GITHUB_SHA
+#                echo $env.GITHUB_REPOSITORY
+#                echo $env.GITHUB_WORKSPACE
+#
+#            - name: Python Shell
+#              shell: python
+#              run: |
+#                import platform
+#                print(platform.processor())
+#
+#
+#
