@@ -6,4 +6,4 @@ jobs:
     log-info:
         runs-on: macos-latest
         steps:
-            - run: edcho $GITHUB_REF
+            - run: echo $GITHUB_REF
