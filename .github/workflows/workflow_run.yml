@@ -1,7 +1,7 @@
 name: Workflow run After Repository Events has been finished
 on:
     workflow_run:
-        workflows: [Repository Events]
+        workflows: [workflow_events]
         types: [completed]
 
 jobs:
