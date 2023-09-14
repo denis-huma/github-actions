@@ -1,4 +1,4 @@
-name: Workflow run
+name: Workflow run After Repository Events has been finished
 on:
     workflow_run:
         workflows: [Repository Events]
@@ -8,4 +8,4 @@ jobs:
     echo-string:
         runs-on: macos-latest
         steps:
-            - run: echo "Triggered because 'Repository Events' was completed"
+            - run: echo ">>> Triggered because 'Repository Events' was completed"
