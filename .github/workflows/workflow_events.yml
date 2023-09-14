@@ -1,10 +1,10 @@
 name: Repository Events
-on:
-    push:
-    pull_request:
-        types: [opened, assigned, reopened, sychronize]
-    issues:
-        types: [opened]
+on: push
+#    push:
+#    pull_request:
+#        types: [opened, assigned, reopened, sychronize]
+#    issues:
+#        types: [opened]
 
 jobs:
     checkout-test:
