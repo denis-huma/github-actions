@@ -1,0 +1,19 @@
+name: Repository Events
+on:
+    push:
+    pull_request:
+        types: [opened, assigned, reopened, sychronize]
+    issues:
+        types: [opened]
+
+jobs:
+    checkout-test:
+        runs-on: macos-latest
+        steps:
+            - name: checkout step
+              run: |
+                echo $GITHUB_SHA
+                echo $GITHUB_REF
+            - uses: actions/checkout@v3
+
+
