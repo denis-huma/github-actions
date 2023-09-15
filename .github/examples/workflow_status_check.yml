@@ -8,8 +8,8 @@ jobs:
         steps:
             - name: Step 1
               run: sleep 20
-            - name: Fail
-              run: exit 1
+#            - name: Fail
+#              run: exit 1
             - name: Runs on Failure
               if: failure() # return true if any of previous step has failed
               run: echo 'Runs only on failure'
@@ -34,4 +34,4 @@ jobs:
 
 
 
-    
+

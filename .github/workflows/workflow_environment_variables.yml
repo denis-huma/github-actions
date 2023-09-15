@@ -1,0 +1,17 @@
+name: Environment Variables
+on: [push]
+run-name: "Environment Variables"
+
+jobs:
+    env-vars-and-context:
+        runs-on: macos-latest
+        steps:
+            - name: Log Environment Variable
+              run: echo $GITHUB_REF # env var
+
+            - name: Log Context
+              run: echo '${{ github.ref }}' # context var - have been sent to runner machine already evaluated
+
+
+
+    
