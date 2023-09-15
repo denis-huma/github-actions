@@ -6,12 +6,13 @@ jobs:
 
     runs-on-issues-and-prs:
         runs-on: macos-latest
-        # if: github.event_name == 'issues' || github.event_name == 'pull_request'
-        if: contains(fromJson('["issues", "pull_request"]'), github.event_name)
+        if : github.event_name == 'issues' || github.event_name == 'pull_request'
+        # if: contains(fromJson('["issues", "pull_request"]'), github.event_name)
+
         steps:
             - name: Run only if issue has a bug label
               if: contains(github.event.issue.labels.*.name, 'bug')
-              run: echo ${{ join([1,2,3], ', ')}} # return "1, 2, 3"
+              run: echo ${{ join(github.event.issue.labels.*.name, ', ') }}
 
     using-expressions-and-contexts:
         runs-on: ubuntu-latest
