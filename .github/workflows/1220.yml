@@ -1,0 +1,14 @@
+name: First workflow
+
+# define the events that should be triggered 
+
+on: workflow_dispatch # trigger workflow manually
+
+jobs: 
+    first-job:
+        runs-on: macos-latest
+        steps:
+            - name: step number one
+              run: echo "First step"
+            - name: step number two
+              run: echo "Second step"
