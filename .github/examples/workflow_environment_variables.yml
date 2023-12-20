@@ -1,0 +1,38 @@
+name: Environment Variables
+on: [push]
+run-name: "Environment Variables"
+
+env:
+    WF_LEVEL_ENV: Available to all jobs
+
+
+jobs:
+    env-vars-and-context:
+        runs-on: macos-latest
+
+        if: github.ref == 'refs/heads/main' # Must use ctx var, not env var
+        env:
+            JOB_LEVEL_ENV: Available to all steps in env-vars-and-context job
+
+
+        steps:
+            - name: Log Environment Variable
+              run: echo $GITHUB_REF # env var - is going to be evaluated only in runner machine
+
+            - name: Log Context
+              run: echo '${{ github.ref }}' # context var - have been sent to runner machine already evaluated and processed
+
+            - name: Log Custom ENV Vars
+              env:
+                STEP_LEVEL_ENV: Available to only this step
+                WF_LEVEL_ENV: Overriden in step
+
+              run: |
+                    echo '${{ env.STEP_LEVEL_ENV }}'
+                    echo $STEP_LEVEL_ENV
+                    echo $WF_LEVEL_ENV
+                    echo $JOB_LEVEL_ENV
+
+
+
+    
