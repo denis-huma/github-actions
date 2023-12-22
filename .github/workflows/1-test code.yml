@@ -58,6 +58,8 @@ jobs:
                 
               
     predeploy-job:
+        # before this job will run, we have to wait until test-job finished
+        needs: test-job # can contain an array of multiple jobs to be finished [test-job1, test-job2, ect.]
         runs-on: macos-latest
         steps:
             - name: Build project
