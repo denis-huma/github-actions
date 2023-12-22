@@ -1,0 +1,39 @@
+name: Test project
+
+# define the events that should be triggered
+
+# Events that triggers workflow you can find here
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push
+
+# on: workflow_dispatch # trigger workflow manually
+on:
+    push:
+        branches:
+            - main
+            
+    pull_request:
+        branches:
+            - main
+    
+jobs:
+    test-job:
+        runs-on: macos-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+              # you can add some configuration or settings using 'with' keyword
+              
+            - name: Install pods
+              run: |
+                sudo gem install cocoapods
+                pod install
+                
+            - name: Build XCode project
+              run: |
+                xcodebuild -workspace github-actions.xcworkspace -scheme github-actions -destination "platform=iOS Simulator,name=iPhone 13"
+                build test
+
+                
+              
+              
+              
