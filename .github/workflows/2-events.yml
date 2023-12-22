@@ -1,0 +1,24 @@
+name: Events Demo 1
+
+# events -
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#about-events-that-trigger-workflows
+
+#on: [push, workflow_dispatch] # events
+
+on: # event
+    pull_request:
+    # specify activity types to pull_request event
+        types:
+            - opened
+            - edited
+            
+    workflow_dispatch:
+
+jobs:
+    info:
+        runs-on: macos-latest
+        steps:
+            - name: Output Github context
+              run: echo "${{ toJSON(github) }}"
+              # To see all the list of github context and expressions visit
+              # https://docs.github.com/en/actions/learn-github-actions/contexts
