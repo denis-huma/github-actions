@@ -32,7 +32,7 @@ jobs:
             - name: Install pods
               run: |
                 sudo gem install cocoapods
-                # cd path/to/project/directory
+                cd ./github-actions
                 pod install
                 
             - name: Build XCode project
