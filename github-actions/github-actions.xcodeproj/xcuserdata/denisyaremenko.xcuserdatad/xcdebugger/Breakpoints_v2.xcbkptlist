@@ -65,6 +65,21 @@
                   endingLineNumber = "54"
                   offsetFromSymbolStart = "2028">
                </Location>
+               <Location
+                  uuid = "677DEACA-453D-4A70-88C8-7B965DC2A2AE - 7f5d6f42d0b42f0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "github_actions.SignUpViewController.signUpButtonTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "github-actions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denisyaremenko/Downloads/Education/iOS/github-actions/github-actions/github-actions/Controllers/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "104">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -161,6 +176,21 @@
                   endingLineNumber = "22"
                   offsetFromSymbolStart = "72">
                </Location>
+               <Location
+                  uuid = "94A63FE4-BF41-402B-B61C-0E654A0F36CE - 87c7d3a18abacd0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "github_actions.SignUpViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "github-actions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denisyaremenko/Downloads/Education/iOS/github-actions/github-actions/github-actions/Controllers/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "100">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -209,6 +239,21 @@
                   endingLineNumber = "39"
                   offsetFromSymbolStart = "272">
                </Location>
+               <Location
+                  uuid = "CBD32517-4329-4E54-B9FB-0FCE1938B668 - 87c7d3a18abacf5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "github_actions.SignUpViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "github-actions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denisyaremenko/Downloads/Education/iOS/github-actions/github-actions/github-actions/Controllers/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "312">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -256,6 +301,21 @@
                   startingLineNumber = "48"
                   endingLineNumber = "48"
                   offsetFromSymbolStart = "728">
+               </Location>
+               <Location
+                  uuid = "A2B92A74-F69E-491D-96E8-C4C3A31CDF53 - 87c7d3a18abac9b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "github_actions.SignUpViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "github-actions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denisyaremenko/Downloads/Education/iOS/github-actions/github-actions/github-actions/Controllers/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "772">
                </Location>
             </Locations>
          </BreakpointContent>

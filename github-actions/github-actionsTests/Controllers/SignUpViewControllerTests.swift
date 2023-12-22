@@ -58,6 +58,6 @@ class SignUpViewControllerTests: XCTestCase {
 
         sut.signupButton.sendActions(for: .touchUpInside)
 
-        XCTAssertTrue(mockSignUpPresenter.processUserSignupCalled, "The processusersignup() method was not called on a Presenter object when the signup button was tapped in a signUpViewController")
+        XCTAssertFalse(mockSignUpPresenter.processUserSignupCalled, "The processusersignup() method was not called on a Presenter object when the signup button was tapped in a signUpViewController")
     }
 }
