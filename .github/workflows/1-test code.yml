@@ -37,6 +37,7 @@ jobs:
                 
             - name: Build XCode project
               run: |
+                cd ./github-actions
                 xcodebuild -workspace github-actions.xcworkspace \
                            -scheme github-actions \
                            -destination "platform=iOS Simulator,name=iPhone 13" \
