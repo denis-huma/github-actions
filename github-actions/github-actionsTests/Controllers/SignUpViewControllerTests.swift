@@ -41,7 +41,7 @@ class SignUpViewControllerTests: XCTestCase {
 
         let signupButtonActions = try XCTUnwrap(signupButton.actions(forTarget: sut, forControlEvent: .touchUpInside), "Signup button does not have any actions assigned to it")
 
-        XCTAssertEqual(signupButtonActions.count, 1)
+        XCTAssertEqual(signupButtonActions.count, 10)
 
         XCTAssertEqual(signupButtonActions.first, "signUpButtonTapped:", "There is no actions with a name signupButtonTapped assigned to signup button")
     }
