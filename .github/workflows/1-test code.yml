@@ -57,5 +57,15 @@ jobs:
 
                 
               
+    predeploy-job:
+        runs-on: macos-latest
+        steps:
+            - name: Build project
+              run: echo "build project..."
               
+              
+              
+              
+              
+          
               
