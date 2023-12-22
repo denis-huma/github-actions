@@ -26,9 +26,13 @@ jobs:
             - name: Install xcpretty
               run: gem install xcpretty
               
+            - name: List Contents
+              run: ls -R
+              
             - name: Install pods
               run: |
                 sudo gem install cocoapods
+                # cd path/to/project/directory
                 pod install
                 
             - name: Build XCode project
