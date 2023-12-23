@@ -20,11 +20,8 @@ jobs:
           uses: actions/upload-artifact@v2
           with:
             name: ios-info-files
-            path: |
-                configuration.json
-                # github-actions
+            path: ./github-actions/github-actions/Resources/configuration.json
 
-          
     deploy:
          needs: build
          runs-on: macos-latest
