@@ -1,9 +1,13 @@
 name: Events Demo 1
 
+# skipping workflow runs if needed https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs
+
 # events -
 # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#about-events-that-trigger-workflows
 
 #on: [push, workflow_dispatch] # events
+
+# to see workflow syntax - https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 
 on: # event
     pull_request:
@@ -11,14 +15,63 @@ on: # event
         types:
             - opened
             - edited
+            # triggers when pull_request will be created or edited
             
     workflow_dispatch:
+    push:
+        branches: # on.push.<branches|tags|branches-ignore|tags-ignore>
+             - main # would only cover main
+             - 'dev-*' # all branches started with dev-, like dev-feature1, dev-app2 etc
+             - 'feature/**' # any other words/characters combinations etc, or slashes / like
+             # feature/new, feature/new/button
+                    
+        paths: # if any of the files will be change in this path that push workflow would be trigger
+            - '.github/workflows/*'
+            
+        paths-ignore:
+            - '.github/workflows/*'
+            
+             
+             
+             
+
+        
 
 jobs:
     info:
         runs-on: macos-latest
         steps:
             - name: Output Github context
+            # run - for commands, uses - for actions
               run: echo "${{ toJSON(github) }}"
               # To see all the list of github context and expressions visit
               # https://docs.github.com/en/actions/learn-github-actions/contexts
+              
+            - name: Checkout project
+              uses: action/checkout@v3
+              # for applying specifical configuration use 'with'
+              # with: some_param: some_value
+              
+            
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+              
+              
+              
+              
+              
+              
+              
+              
