@@ -25,16 +25,16 @@ jobs:
                 # github-actions
 
           
-    # deploy:
-    #     needs: build
-    #     runs-on: macos-latest
-    #     steps:
-    #         - name: Get build artifacts
-    #           uses: actions/download-artifact@v3
-    #           with:
-    #             name: ios-info-files
-    #         - name: Output contents
-    #           run: ls
+     deploy:
+         needs: build
+         runs-on: macos-latest
+         steps:
+             - name: Get build artifacts
+               uses: actions/download-artifact@v3
+               with:
+                 name: ios-info-files
+             - name: Output contents
+               run: ls
           
           
           
