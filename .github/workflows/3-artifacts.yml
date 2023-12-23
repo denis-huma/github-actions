@@ -21,19 +21,20 @@ jobs:
           with:
             name: ios-info-files
             path: |
-                # github-actions
                 configuration.json
+                # github-actions
+
           
-    deploy:
-        needs: firstJob
-        runs-on: macos-latest
-        steps:
-            - name: Get build artifacts
-              uses: actions/download-artifact@v3
-              with:
-                name: ios-info-files
-            - name: Output contents
-              run: ls
+    # deploy:
+    #     needs: build
+    #     runs-on: macos-latest
+    #     steps:
+    #         - name: Get build artifacts
+    #           uses: actions/download-artifact@v3
+    #           with:
+    #             name: ios-info-files
+    #         - name: Output contents
+    #           run: ls
           
           
           
