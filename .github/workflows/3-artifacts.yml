@@ -5,10 +5,10 @@ on:
             - main
 
 jobs:
-    firstJob:
+    artifacts:
         runs-on: macos-latest
         steps:
-        - name: Get colde
+        - name: Get cole
           uses: actions/checkout@v3
           
         - name: Extract Info.plist values
@@ -25,7 +25,7 @@ jobs:
                 # github-actions
 
           
-     deploy:
+    deploy:
          needs: build
          runs-on: macos-latest
          steps:
