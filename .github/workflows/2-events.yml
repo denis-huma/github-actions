@@ -18,18 +18,18 @@ on: # event
             # triggers when pull_request will be created or edited
             
     workflow_dispatch:
-    push:
-        branches: # on.push.<branches|tags|branches-ignore|tags-ignore>
-             - main # would only cover main
-             - 'dev-*' # all branches started with dev-, like dev-feature1, dev-app2 etc
-             - 'feature/**' # any other words/characters combinations etc, or slashes / like
-             # feature/new, feature/new/button
-                    
-        paths: # if any of the files will be change in this path that push workflow would be trigger
-            - '.github/workflows/*'
-            
-        paths-ignore:
-            - '.github/workflows/*'
+#    push:
+#        branches: # on.push.<branches|tags|branches-ignore|tags-ignore>
+#             - main # would only cover main
+#             - 'dev-*' # all branches started with dev-, like dev-feature1, dev-app2 etc
+#             - 'feature/**' # any other words/characters combinations etc, or slashes / like
+#             # feature/new, feature/new/button
+#                    
+#        paths: # if any of the files will be change in this path that push workflow would be trigger
+#            - '.github/workflows/*'
+#            
+#        paths-ignore:
+#            - '.github/workflows/*'
             
              
              
