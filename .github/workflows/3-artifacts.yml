@@ -5,7 +5,7 @@ on:
             - main
 
 jobs:
-    artifacts:
+    build:
         runs-on: macos-latest
         steps:
         - name: Get cole
