@@ -13,6 +13,7 @@
 		8538FCB82A19043D002E3FAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8538FCB62A19043D002E3FAA /* Main.storyboard */; };
 		8538FCBA2A19043E002E3FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8538FCB92A19043E002E3FAA /* Assets.xcassets */; };
 		8538FCBD2A19043E002E3FAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8538FCBB2A19043E002E3FAA /* LaunchScreen.storyboard */; };
+		8551ACEA2B37080500E55195 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8551ACE92B37080500E55195 /* configuration.json */; };
 		85549FE32A1F35EB009C4A98 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85549FE22A1F35EB009C4A98 /* SignUpViewController.swift */; };
 		85549FE52A1F363F009C4A98 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85549FE42A1F363F009C4A98 /* SignUpPresenter.swift */; };
 		85549FE72A1F3685009C4A98 /* SignUpFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85549FE62A1F3685009C4A98 /* SignUpFormModel.swift */; };
@@ -42,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		850D4F632A90E5EF00FB2D12 /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		8538FCAD2A19043D002E3FAA /* github-actions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-actions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8538FCB02A19043D002E3FAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8538FCB22A19043D002E3FAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +50,7 @@
 		8538FCB92A19043E002E3FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8538FCBC2A19043E002E3FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8538FCBE2A19043E002E3FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8551ACE92B37080500E55195 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
 		85549FE22A1F35EB009C4A98 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		85549FE42A1F363F009C4A98 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		85549FE62A1F3685009C4A98 /* SignUpFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormModel.swift; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 				DAC51868A5915CA1DBF96949 /* Pods-github-actionsTests.debug.xcconfig */,
 				DFFE0CA693390754D655825D /* Pods-github-actionsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -138,7 +138,6 @@
 		8538FCAF2A19043D002E3FAA /* github-actions */ = {
 			isa = PBXGroup;
 			children = (
-				850D4F632A90E5EF00FB2D12 /* test.json */,
 				85549FF12A1F3A18009C4A98 /* Resources */,
 				85549FE82A1F36A1009C4A98 /* Helpers */,
 				85549FE12A1F35D7009C4A98 /* Models */,
@@ -192,6 +191,7 @@
 		85549FF12A1F3A18009C4A98 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8551ACE92B37080500E55195 /* configuration.json */,
 				85549FF22A1F3A26009C4A98 /* Constants.swift */,
 			);
 			path = Resources;
@@ -320,6 +320,7 @@
 			files = (
 				8538FCBD2A19043E002E3FAA /* LaunchScreen.storyboard in Resources */,
 				8538FCBA2A19043E002E3FAA /* Assets.xcassets in Resources */,
+				8551ACEA2B37080500E55195 /* configuration.json in Resources */,
 				8538FCB82A19043D002E3FAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

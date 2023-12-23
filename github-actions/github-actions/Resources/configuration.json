@@ -1,0 +1,553 @@
+{
+    "color": "0x007AFF",
+    "security": {
+        "appLockRequired": true,
+        "mfaRequired": true
+    },
+    "consent": {
+        "createDateTime": "2020-07-22T12:17:45.316000Z",
+        "enabled": "ENABLED",
+        "id": "5f0d648d7fe6637a82dcbea0",
+        "instituteFullName": "string",
+        "instituteName": "string",
+        "instituteTextDetails": "string",
+        "revision": 8,
+        "sections": [{
+            "details": "Huma Therapeutics Ltd. (\"Huma\" or \"we\") is the provider of this app. The following screens explain which data the app processes, and for which purposes. At the end of this privacy information, we will ask for your consent. You can obtain more information in the pop-up window, including a link to our exhaustive Privacy Policy as well as contact information of our Data Protection Officer. \n<a href=\"https://storage.googleapis.com/hu-deployment-static-content/fenland/privacy_policy_fenland_11_06_2020.pdf\">Privacy Policy</a>",
+            "title": "Welcome",
+            "type": "OVERVIEW"
+        }, {
+            "details": "Huma Therapeutics Ltd (\"Huma\" or \"we\") is the provider of this app.  In order for you to register and use this app, your consent is required.",
+            "options": [{
+                "order": 0,
+                "text": "I consent to Huma processing my personal data, including health information as described in the <a href=\"https://storage.googleapis.com/hu-deployment-static-content/fenland/privacy_policy_fenland_11_06_2020.pdf\">Privacy Policy</a>.",
+                "type": 0
+            }, {
+                "order": 1,
+                "text": "I agree to the <a href=\"https://storage.googleapis.com/hu-deployment-static-content/fenland/EULA_Huma_FenlandMRC_11_06_2020.pdf\">Terms & Conditions</a>.",
+                "type": 1
+            }],
+            "title": "Consent to process personal data",
+            "type": "DATA_PROCESSING"
+        }, {
+            "details": "Your de-identified health information can help researchers learn more about population health, early disease detection, and patterns in disease progression. Using digital technologies, we believe we can identify patterns to help clinicians take more informed decisions on our health. We de-identify your data by removing identifiable information, such as name, mobile number and email.",
+            "options": [{
+                "order": 0,
+                "text": "I agree that my de-identified data may be used by Huma and shared with the University of Cambridge for research in the Fenland study.",
+                "type": 0
+            }, {
+                "order": 1,
+                "text": "I agree that my de-identified data may be used by Huma and shared with the University of Cambridge for research in the Fenland study and may be shared by Huma with other third parties in research that can improve health services and products to the public.",
+                "type": 1
+            }],
+            "title": "Data sharing",
+            "type": "SHARING"
+        }]
+    },
+    "econsent": {
+        "contactText": "Please contact your study team at contact@studyteam.com if you have any questions.",
+        "createDateTime": "2021-01-15T18:32:54.023000Z",
+        "enabled": "ENABLED",
+        "id": "6001dfd6e534f7ad8376a7c2",
+        "instituteFullName": "string",
+        "instituteName": "string",
+        "instituteTextDetails": "string",
+        "overviewText": "To participate in the trial study, please read  the consent form through in detail. \n\nIf you have any questions, please contact your study team at studyteam@reallylongemail.com or +44 1234 567 890 providing your consent to participate.",
+        "review": {
+            "details": "Please review the form below, and tap Agree if you are ready to continue.",
+            "title": "Review"
+        },
+        "revision": 1,
+        "sections": [
+            {
+                "details": "INTRODUCTION",
+                "reviewDetails": "You have been asked to participate in a clinical research study initiated, managed, and financed by ABC LAbs, who is the Sponsor of this study. Before your decide, it is important for you to understand why the research is being done and what it will involve. This informed consent form will provide you with essential information about this study and your rights as a study participant so that you can make an informed decision about your participation. Y \nYour decision to participate in this study is entirely voluntary. You will not lose any benefits to which you would otherwise be entitled if you refuse to participant. In addition, you may withdraw from the study at any time without penality or loss of benefits to which you are otherwise entitled. You will be informed in a timely manner, if any relevant new information about this drug or this study becomes available that may alter your willingness to continue to participate. If you agree, your General Practitioner will be told that you are taking part in this study.",
+                "thumbnailLocation": {
+                    "bucket": "hu-pp-dev-app-bucket",
+                    "key": "deployment/5ffe24f932494652ffce344a/econsent/assets/introduction.png",
+                    "region": "eu"
+                },
+                "thumbnailType": "IMAGE",
+                "title": "Introduction",
+                "type": "INTRODUCTION"
+            },
+            {
+                "reviewDetails": "You are being asked to participate in this clinical research study because you have high blood pressure and are already taking prescribed commercial Cligoliob for an approved dose and indication in your countr.\nYou are eligible to participate in this study because following discussions with your own doctor you have decided to continue taking Cigoliob.\nInformation regarding the use of Cigoliob may be obtained from the patient information leaflet which accompanies your supply of Cigoliob and from your own treating physician.\nThe purpose of this study is to assess the levels of Cigoliob in blood across the course of the study in study participants with high blood pressure.\nThis study is expected to enroll approximately 100 women who have high blood pressure while takingcommercial Cigoliob across approximately 13 centers throughout Canada, USA, Swizerland and selected countries in the European Union (possible including but not necessarily limited to France, Germany, Spain or Italy).",
+                "thumbnailType": "IMAGE",
+                "thumbnailUrl": "https://www.roadrunnerrecords.com/sites/g/files/g2000005056/f/sample-4.jpg",
+                "title": "PURPOSE",
+                "type": "PURPOSE"
+            },
+            {
+                "reviewDetails": "I have read and understood this consent document. By signing this:\n\u2022 I confirm that I have had time to read carefully and understand the study participant informed consent provided for this study.\n\u2022 I confirm that I have had the opportunity to discuss the study and ask questions, and I am satisfied with the answers and explanations that I have been provided.\n\u2022 I give permission for my medical records to be reviewed by the Sponsor or designee and/or representatives of any Drug Reculatory Authorities such as the U.S. FDA and Insitutional Review Boards.\n\u2022 I understand that my participation is voluntary and that I am free to withdraw at any time without giving any reason and without my medical care or legal rights being affected.. I agree that the Sponsor can continue to use the information about my health collected during the study to preserve the integrity of the study, even if I withdraw from the study.",
+                "thumbnailLocation": {
+                    "bucket": "hu-pp-dev-app-bucket",
+                    "key": "deployment/5ffe24f932494652ffce344a/econsent/assets/review_to_sign.mp4",
+                    "region": "eu"
+                },
+                "thumbnailType": "VIDEO",
+                "title": "REVIEW_TO_SIGN",
+                "type": "REVIEW_TO_SIGN"
+            },
+            {
+                "reviewDetails": "During the course of this trial, you\u2019ll be asked to complete a series of task such as:\n\u2022 Entering your blood pressure in the morning every day in the Huma app\n\u2022Recording your medication intake in the Huma app\n\u2022 Attending telemedicine video conferences with your study care team in the Huma app\n\u2022 Attending face-to-face appointments with your study care team every 3 months\nThere are some acitivites that you would not be able to do during the course of the trial. They are:\n\u2022 Donating blood\n\u2022 Traveling via plane or helicopter",
+                "thumbnailType": "VIDEO",
+                "thumbnailUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                "title": "DURING_THE_TRIAL",
+                "type": "DURING_THE_TRIAL"
+            }
+        ],
+        "signature": {
+            "hasMiddleName": true,
+            "nameDetails": "Type your full name in text fields below",
+            "nameTitle": "Medopad EConsent",
+            "showFirstLastName": true,
+            "signatureDetails": "Please sign using your finger in the box below",
+            "signatureTitle": "Signature"
+        },
+        "title": "Informed consent form"
+    },
+    "consentNeeded": false,
+    "eConsentNeeded": false,
+    "createDateTime": "2020-07-14T07:53:44.092000Z",
+    "deploymentId": "5f0d6488882b387e2359e606",
+    "contactUsURL": "https://huma.com/contactus",
+    "eulaUrl": "https://storage.googleapis.com/hu-deployment-static-content/fenland/EULA_Huma_FenlandMRC_11_06_2020.pdf",
+    "features": {
+        "appointment": true,
+        "healthDeviceIntegration": false,
+        "classB": true,
+        "messaging": {
+            "enabled": true
+        }
+    },
+    "icon": {
+        "bucket": "hu-pp-qa-app-bucket",
+        "key": "deployment/5f0d6488882b387e2359e606/Fenlandlogo.png",
+        "region": "eu"
+    },
+    "keyActionsEnabled": true,
+    "learn": {
+        "createDateTime": "2020-07-14T07:53:44.092000Z",
+        "id": "5f0d6488882b387e2359e605",
+        "sections": [{
+            "articles": [{
+                "content": {
+                    "type": "LINK",
+                    "url": "https://storage.googleapis.com/hu-deployment-static-content/fenland/concerned_about_your_health111.png"
+                },
+                "id": "5f3ee7f280f5529dc1a69040",
+                "order": 1,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7f280f5529dc1a6903f/article/5f3ee7f280f5529dc1a69040/article1.png",
+                    "region": "eu"
+                },
+                "title": "Information",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:18:59.427000Z"
+            },
+            {
+                "content": {
+                    "type": "VIDEO",
+                    "url": "video.mp4"
+                },
+                "id": "5f345e7f280f552dc1a69040",
+                "order": 1,
+                "thumbnailUrl": {
+                    "bucket": "",
+                    "key": "test.png",
+                    "region": ""
+                },
+                "title": "Avoiding metabolic syndrome",
+                "type": "SMALL"
+            },
+            {
+                "content": {
+                    "type": "LINK",
+                    "url": "https://111.nhs.uk/covid-19/"
+                },
+                "id": "5f3ee7f380f5529dc1a69041",
+                "order": 2,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7f280f5529dc1a6903f/article/5f3ee7f380f5529dc1a69041/article2.png",
+                    "region": "eu"
+                },
+                "title": "NHS 111",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:19:06.335000Z"
+            }, {
+                "content": {
+                    "type": "LINK",
+                    "url": "https://www.nhs.uk/conditions/coronavirus-covid-19/"
+                },
+                "id": "5f3ee7f380f5529dc1a69042",
+                "order": 3,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7f280f5529dc1a6903f/article/5f3ee7f380f5529dc1a69042/article3.png",
+                    "region": "eu"
+                },
+                "title": "COVID-19 advice",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:19:13.077000Z"
+            }],
+            "createDateTime": "2020-08-20T21:15:30.420000Z",
+            "id": "5f3ee7f280f5529dc1a6903f",
+            "order": 1,
+            "title": "Concerned about your health?",
+            "updateDateTime": "2020-08-20T21:18:52.684000Z"
+        }, {
+            "articles": [{
+                "content": {
+                    "type": "LINK",
+                    "url": "https://storage.googleapis.com/hu-deployment-static-content/fenland/concerned_your_mental_health.png"
+                },
+                "id": "5f3ee7f480f5529dc1a69044",
+                "order": 1,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7f480f5529dc1a69043/article/5f3ee7f480f5529dc1a69044/article1.png",
+                    "region": "eu"
+                },
+                "title": "Information",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:19:19.887000Z"
+            }, {
+                "content": {
+                    "type": "LINK",
+                    "url": "https://www.nhs.uk/conditions/stress-anxiety-depression/low-mood-and-depression/"
+                },
+                "id": "5f3ee7f580f5529dc1a69045",
+                "order": 2,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7f480f5529dc1a69043/article/5f3ee7f580f5529dc1a69045/article2.png",
+                    "region": "eu"
+                },
+                "title": "Mental health",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:19:26.716000Z"
+            }],
+            "createDateTime": "2020-08-20T21:15:32.626000Z",
+            "id": "5f3ee7f480f5529dc1a69043",
+            "order": 2,
+            "title": "Concerned about your mental wellbeing?",
+            "updateDateTime": "2020-08-20T21:19:13.276000Z"
+        }, {
+            "articles": [{
+                "content": {
+                    "type": "LINK",
+                    "url": "https://storage.googleapis.com/hu-deployment-static-content/fenland/Fenland_Video_20200813_SHvo.mp4"
+                },
+                "id": "5f3ee7f680f5529dc1a69047",
+                "order": 1,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7f580f5529dc1a69046/article/5f3ee7f680f5529dc1a69047/article0.png",
+                    "region": "eu"
+                },
+                "title": "Getting started with Huma",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:19:33.779000Z"
+            }, {
+                "content": {
+                    "type": "LINK",
+                    "url": "https://www.mrc-epid.cam.ac.uk/research/studies/fenland-covid19/information-for-participants/app/"
+                },
+                "id": "5f3ee7f780f5529dc1a69048",
+                "order": 2,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7f580f5529dc1a69046/article/5f3ee7f780f5529dc1a69048/article1.png",
+                    "region": "eu"
+                },
+                "title": "Fenland study FAQs",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:19:44.132000Z"
+            }, {
+                "content": {
+                    "type": "LINK",
+                    "url": "https://www.youtube.com/watch?v=6dooWP4RRNo&feature=emb_title"
+                },
+                "id": "5f3ee7fa80f5529dc1a69049",
+                "order": 3,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7f580f5529dc1a69046/article/5f3ee7fa80f5529dc1a69049/article2.png",
+                    "region": "eu"
+                },
+                "title": "Take your temperature",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:19:50.841000Z"
+            }, {
+                "content": {
+                    "type": "LINK",
+                    "url": "https://www.youtube.com/watch?time_continue=109&v=HHptAz9rO5w&feature=emb_title"
+                },
+                "id": "5f3ee7fb80f5529dc1a6904a",
+                "order": 4,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7f580f5529dc1a69046/article/5f3ee7fb80f5529dc1a6904a/article3.png",
+                    "region": "eu"
+                },
+                "title": "Take your oxygen level",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:19:57.592000Z"
+            }],
+            "createDateTime": "2020-08-20T21:15:33.990000Z",
+            "id": "5f3ee7f580f5529dc1a69046",
+            "order": 3,
+            "title": "Educational resources",
+            "updateDateTime": "2020-08-20T21:19:26.860000Z"
+        }, {
+            "articles": [{
+                "content": {
+                    "type": "LINK",
+                    "url": "https://storage.googleapis.com/hu-deployment-static-content/fenland/study_info.png"
+                },
+                "id": "5f3ee7fc80f5529dc1a6904c",
+                "order": 1,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7fc80f5529dc1a6904b/article/5f3ee7fc80f5529dc1a6904c/article1.png",
+                    "region": "eu"
+                },
+                "title": "Information",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:20:04.453000Z"
+            }, {
+                "content": {
+                    "type": "LINK",
+                    "url": "https://www.mrc-epid.cam.ac.uk/research/studies/fenland/"
+                },
+                "id": "5f3ee7fc80f5529dc1a6904d",
+                "order": 2,
+                "thumbnailUrl": {
+                    "bucket": "hu-pp-qa-app-bucket",
+                    "key": "deployment/5f0d6488882b387e2359e606/section/5f3ee7fc80f5529dc1a6904b/article/5f3ee7fc80f5529dc1a6904d/article2.png",
+                    "region": "eu"
+                },
+                "title": "Fenland website",
+                "type": "SMALL",
+                "updateDateTime": "2020-08-20T21:20:11.130000Z"
+            }],
+            "createDateTime": "2020-08-20T21:15:40.143000Z",
+            "id": "5f3ee7fc80f5529dc1a6904b",
+            "order": 4,
+            "title": "Fenland study team",
+            "updateDateTime": "2020-08-20T21:19:57.793000Z"
+        }],
+        "updateDateTime": "2020-07-14T07:53:44.092000Z"
+    },
+    "moduleConfigs": [{
+        "about": "Keeping an up to date list of your medications and supplements is an important part of this study. This module also records information about your medication and supplement adherence using a short questionnaire",
+        "configBody": {
+            "id": "1e67dd23-d1e5-465f-95a0-ef1dadb15428",
+            "isForManager": false,
+            "name": "Medication and Supplement Tracker",
+            "order": 2,
+            "pages": [{
+                "items": [{
+                    "description": "Indicate your adherence on a scale of 0 (never) to 100 (always).",
+                    "format": "SCALE",
+                    "id": "7c50c7d5-6f4e-4c0b-aeaf-c266eafd056e",
+                    "logic": {
+                        "isEnabled": true,
+                        "rules": [{
+                            "anyOf": [{
+                                "eq": "100",
+                                "questionId": "7c50c7d5-6f4e-4c0b-aeaf-c266eafd056e"
+                            }],
+                            "jumpToId": "ed499bd4-bbfb-45c7-bb5d-b2075c7c65c7"
+                        }]
+                    },
+                    "lowerBound": "0",
+                    "order": 1,
+                    "required": true,
+                    "text": "In the last month, how frequently did you complete your scheduled medication and supplements routine?",
+                    "upperBound": "100"
+                }],
+                "order": 1,
+                "type": "QUESTION"
+            }, {
+                "items": [{
+                    "description": "",
+                    "format": "TEXTCHOICE",
+                    "id": "6ac67dc1-f155-4dd7-b4df-2868b12235d3",
+                    "options": [{
+                        "label": "Experienced side effects",
+                        "value": "0"
+                    }, {
+                        "label": "Feeling better",
+                        "value": "1"
+                    }, {
+                        "label": "Feeling worse",
+                        "value": "2"
+                    }, {
+                        "label": "Forgot to take",
+                        "value": "3"
+                    }, {
+                        "label": "Ran out of supply",
+                        "value": "4"
+                    }, {
+                        "label": "Other reason/s",
+                        "value": "5"
+                    }, {
+                        "label": "No, I took all my regular dose",
+                        "value": "6"
+                    }],
+                    "order": 1,
+                    "required": true,
+                    "selectionCriteria": "MULTIPLE",
+                    "text": "Did you miss your medications and supplements for any of the following reasons?"
+                }],
+                "order": 2,
+                "type": "QUESTION"
+            }, {
+                "items": [{
+                    "description": "",
+                    "format": "TEXT",
+                    "id": "ed499bd4-bbfb-45c7-bb5d-b2075c7c65c7",
+                    "order": 1,
+                    "required": false,
+                    "text": "Please provide any additional information, such as description of the side effects or other reasons for non-adherence."
+                }],
+                "order": 3,
+                "type": "QUESTION"
+            }],
+            "publisherName": "Default publisher"
+        },
+        "createDateTime": "2020-07-14T07:54:11.770000Z",
+        "id": "5f0d64a3882b387e2359e60d",
+        "moduleId": "MedicationTracker",
+        "moduleName": "",
+        "order": 5,
+        "ragThresholds": [],
+        "version": 0,
+        "schedule": {
+            "friendlyText": "friendlyText",
+            "isoDuration": "P1M",
+            "timesOfDay": [],
+            "timesPerDuration": 1
+        },
+        "status": "ENABLED",
+        "updateDateTime": "2020-09-25T14:58:45.400000Z"
+    }, {
+        "about": "Pulse oximetry is a quick and painless way to measure the oxygen levels in your blood, which gives a good indication of how well your heart and lungs are working. Detecting and recording variations in this measurement is an important part of this research study.\n\nWe recommend you take this measurement first thing in the morning, at the same time as your temperature and heart rate.\n\nPlease take your reading following the Fenland COVID-19 Study guidance, links to these and Frequently Asked Questions can be found in the learn section.",
+        "configBody": {},
+        "createDateTime": "2020-07-14T07:54:11.826000Z",
+        "id": "5f0d64a37fe6637a82dcbea7",
+        "moduleId": "PulseOximetry",
+        "moduleName": "",
+        "order": 3,
+        "ragThresholds": [],
+        "schedule": {
+            "friendlyText": "friendlyText",
+            "isoDuration": "P1W",
+            "timesOfDay": [],
+            "timesPerDuration": 3
+        },
+        "status": "ENABLED",
+        "updateDateTime": "2020-09-25T14:58:45.626000Z",
+        "version": 0
+    },
+    {
+        "about": "",
+        "configBody": {},
+        "createDateTime": "2020-10-14T10:20:36.457000Z",
+        "enabledPreferredUnit": false,
+        "id": "5f86d0f4dd28f1236d75c5d4",
+        "learnArticleIds": [],
+        "moduleId": "HealthStatus",
+        "moduleName": "",
+        "order": 4,
+        "ragThresholds": [],
+        "schedule": {
+            "friendlyText": "friendlyText",
+            "isoDuration": "P1W",
+            "timesOfDay": [],
+            "timesPerDuration": 1
+        },
+        "status": "ENABLED",
+        "updateDateTime": "2020-11-25T17:10:59.123000Z",
+        "version": 0
+    },
+    {
+        "about": "",
+        "createDateTime": "2020-10-14T10:20:36.457000Z",
+        "enabledPreferredUnit": false,
+        "id": "5f86d0f4dd28f8686d75c5d4",
+        "learnArticleIds": [],
+        "moduleId": "AZScreeningQuestionnaire",
+        "moduleName": "",
+        "order": 4,
+        "ragThresholds": [],
+        "schedule": {
+            "friendlyText": "friendlyText",
+            "isoDuration": "P1W",
+            "timesOfDay": [],
+            "timesPerDuration": 1
+        },
+        "configBody": {},
+        "status": "ENABLED",
+        "updateDateTime": "2020-11-25T17:10:59.123000Z",
+        "version": 0
+    }],
+    "name": "Fenland Study",
+    "privacyPolicyUrl": "https://storage.googleapis.com/hu-deployment-static-content/fenland/privacy_policy_fenland_11_06_2020.pdf",
+    "profile": {
+        "fields": {
+            "allergyHistory": false,
+            "bloodGroup": false,
+            "chronicIllness": false,
+            "dateOfBirth": true,
+            "dateOfLastPhysicalExam": false,
+            "email": true,
+            "emergencyPhoneNumber": false,
+            "extraIds": {
+                "aliveCorId": false,
+                "fenlandCohortId": true,
+                "insuranceNumber": false,
+                "mandatoryOnboardingIds": ["fenlandCohortId"],
+                "nhsId": true,
+                "unEditableIds": ["fenlandCohortId"],
+                "wechatId": false
+            },
+            "familyMedicalHistory": false,
+            "familyName": true,
+            "gender": true,
+            "givenName": true,
+            "height": true,
+            "operationHistory": false,
+            "pastHistory": false,
+            "phoneNumber": true,
+            "pregnancy": false,
+            "presentSymptoms": false,
+            "primaryAddress": false,
+            "race": true
+        }
+    },
+    "extraCustomFields": {
+        "mediclinicId": {
+          "errorMessage": "Mediclinic ID is incorrect",
+          "validation": "^123",
+          "onboardingCollectionText": "Please enter your Mediclinic ID",
+          "profileCollectionText": "Mediclinic ID",
+          "required": false,
+          "type": "NUMERIC",
+          "order": 1
+        }
+    },
+    "status": "DEPLOYED",
+    "termAndConditionUrl": "https://storage.googleapis.com/hu-deployment-static-content/fenland/EULA_Huma_FenlandMRC_11_06_2020.pdf",
+    "updateDateTime": "2020-07-14T07:53:44.092000Z",
+    "eLabelTemplateUrl": "https://apple.com",
+    "userActivationCode": "52620311",
+    "staticEventConfig": {
+        "title": "Static event config title",
+        "description": "Static event config description"
+    }
+}

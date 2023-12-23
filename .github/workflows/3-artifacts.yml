@@ -1,0 +1,38 @@
+name: Artifacts
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    firstJob:
+        runs-on: macos-latest
+        steps:
+        - name: Get colde
+          uses: actions/checkout@v3
+          
+        - name: Extract Info.plist values
+          run: |
+            cd ./github-actions
+            ls -R
+
+        - name: Archive artifact
+          uses: actions/upload-artifact@v2
+          with:
+            name: ios-info-files
+            path: |
+                github-actions
+                configuration.json
+          
+          
+          
+          
+          
+          
+          
+          
+          
+    
+        
+          
+
