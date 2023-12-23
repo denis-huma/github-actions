@@ -13,7 +13,7 @@ jobs:
           
         - name: Extract Info.plist values
           run: |
-            cd ./github-actions/Resources
+            cd ./github-actions
             ls -R
 
         - name: Archive artifact
