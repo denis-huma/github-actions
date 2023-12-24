@@ -13,7 +13,7 @@ jobs:
         - name: Get cole
           uses: actions/checkout@v3
           
-        - name: Extract Info.plist values
+        - name: List resources
           run: |
             cd ./github-actions/github-actions/Resources
             ls -R

@@ -1,6 +1,6 @@
 name: Artifacts
 on:
-    push:
+    pull_request:
         branches:
             - main
 
