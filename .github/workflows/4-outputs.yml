@@ -1,0 +1,42 @@
+name: Outputs
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: macos-latest
+        outputs:
+            name-abc-file: ${{ steps.publishID.outputs.something }}
+        steps:
+        - name: Get cole
+          uses: actions/checkout@v3
+          
+        - name: Extract Info.plist values
+          run: |
+            cd ./github-actions/github-actions/Resources
+            ls -R
+            
+        - name: Publish title
+          id: publishID
+          run: find ./github-actions/github-actions/Resources/*.json -type f -execdir echo 'something={}' >> $GITHUB_OUTPUT ';'
+
+    deploy:
+         needs: build
+         runs-on: macos-latest
+                
+         steps:
+             - name: Output contents
+               run: echo "${{ needs.build.outputs.name-abc-file }}"
+          
+          
+          
+          
+          
+          
+          
+    
+        
+          
+
