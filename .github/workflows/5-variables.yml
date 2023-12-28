@@ -25,5 +25,5 @@ jobs:
         - name: List resources
           run: |
             echo "Name 2: "${{ env.GIT_DB_NAME }}"
-            echo "Name 1: $GIT_DB_NAME"
+            echo "The value of GIT_DB_NAME is $GIT_DB_NAME"
 
