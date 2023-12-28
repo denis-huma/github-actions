@@ -1,0 +1,33 @@
+name: Outputs
+on:
+    push:
+        branches:
+            - main
+
+env:
+    GIT_DB_NAME: GitActions Data Base
+    GIT_USERNAME: Username Git
+    GIT_PASSWORD: Qwerty123
+    GIT_JOB_PORT: 8080
+
+jobs:
+    build:
+        env:
+            GIT_BUILD_ENV_TITLE: abcd
+            
+        runs-on: macos-latest
+        outputs:
+            name-abc-file: ${{ steps.publishID.outputs.something }}
+        steps:
+        - name: Get cole
+          uses: actions/checkout@v3
+          
+        - name: List resources
+          run: |
+            echo "Name: $GIT_DB_NAME"
+            echo "Name: "${{ env.GIT_DB_NAME }}"
+
+    
+        
+          
+
