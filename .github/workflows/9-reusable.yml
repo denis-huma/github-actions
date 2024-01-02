@@ -1,5 +1,5 @@
 name: Reusable workflow
-# workflow_call allow to call this workflow from another workflows
+# workflow_call allows to call this workflow from another workflows
 
 on:
     workflow_call:
@@ -17,7 +17,7 @@ jobs:
         runs-on: macos-latest
         steps:
             - name: Get Code
-              uses: actions/download-artifacts@v3
+              uses: actions/download-artifact@v3
               with:
                 ${{ inputs.artifact-namexxx }}
                 
