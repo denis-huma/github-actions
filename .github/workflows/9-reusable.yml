@@ -17,8 +17,8 @@ on:
 
 jobs:
     deploy:
-        outputs:
-            outcome: ${{ steps.set-result.outputs.step-resulttt }}
+        # outputs:
+        #     outcome: ${{ steps.set-result.outputs.step-resulttt }}
 
     runs-on: macos-latest
     steps:
@@ -36,6 +36,6 @@ jobs:
         - name: Output info
           run: echo "Deploying and uploading (step 2)"
               
-        - name: Set result output
-          id: set-result
-          run: echo "step-resulttt=success" >> $GITHUB_OUTPUT
+        # - name: Set result output
+        #   id: set-result
+        #   run: echo "step-resulttt=success" >> $GITHUB_OUTPUT
