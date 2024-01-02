@@ -18,9 +18,10 @@ on:
             
 jobs:
     deploy:
+    runs-on: macos-latest
     outputs:
         outcome: ${{ steps.set-result.outputs.step-resulttt }}
-        runs-on: macos-latest
+        
         steps:
             - name: Echo...
               run: echo inputs.artifact-name
