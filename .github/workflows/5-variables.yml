@@ -1,6 +1,6 @@
 name: Outputs
 on:
-    push:
+    pull_request:
         branches:
             - main
 
@@ -9,11 +9,14 @@ env:
     GIT_USERNAME: Username Git
     GIT_PASSWORD: Qwerty123
     GIT_JOB_PORT: 8080
+    GIT_ACTION_SECRET: ${{ secrets.GIT_ACTION_SECRET }}
 
 jobs:
     build:
         env:
-            GIT_BUILD_ENV_TITLE: abcd
+            GIT_BUILD_ENV_TITLE: abc
+        environment: testing # see the name of env that had been set in github repository settings
+        # each environment has its own secrets
             
         runs-on: macos-latest
         outputs:

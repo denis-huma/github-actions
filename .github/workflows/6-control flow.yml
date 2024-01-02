@@ -1,0 +1,18 @@
+name: Outputs
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: macos-latest
+        steps:
+        - name: Get code
+          id: get-code-step
+          uses: actions/checkout@v3
+          
+        - name: List resources
+          if: steps.get-code-step.outcome == 'failure'
+          run: echo 'Get code'
+
