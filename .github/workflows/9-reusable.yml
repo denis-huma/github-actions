@@ -19,7 +19,7 @@ jobs:
             - name: Get Code
               uses: actions/download-artifacts@v3
               with:
-                ${{ inputs.artifact-name }}
+                ${{ inputs.artifact-namexxx }}
                 
             - name: List files
               run: ls
