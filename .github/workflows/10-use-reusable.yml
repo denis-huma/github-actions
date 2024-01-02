@@ -8,17 +8,17 @@ jobs:
     start:
         runs-on: macos-latest
         steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
+            - name: Checkout code
+              uses: actions/checkout@v2
       
-        - name: List directory contents
-          run: ls
+            - name: List directory contents
+              run: ls
               
-        - name: Archive artifact
-          uses: actions/upload-artifact@v2
-        with:
-                name: ios-info-files
-                path: ./github-actions/github-actions/Resources/configuration.json
+            - name: Archive artifact
+              uses: actions/upload-artifact@v2
+              with:
+                    name: ios-info-files
+                    path: ./github-actions/github-actions/Resources/configuration.json
               
     deploy:
         needs: start
