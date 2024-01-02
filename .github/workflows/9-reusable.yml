@@ -11,9 +11,15 @@ on:
                 # required false - can be called without providing and input value from artifact name
                 default: dist # can be any word here
                 type: string # expected type of value here
-    
+        outputs:
+            result:
+                description: The result of deployment
+                value: ${{ jobs.deploy.outputs.outcome }}
+            
 jobs:
     deploy:
+    outputs:
+        outcome: ${{ steps.set-result.outputs.step-resulttt }}
         runs-on: macos-latest
         steps:
             - name: Echo...
@@ -29,3 +35,8 @@ jobs:
                 
             - name: Output info
               run: echo "Deploying and uploading (step 2)"
+              
+            - name: Set result output
+              id: set-result
+              run: echo "step-resulttt=success" >> $GITHUB_OUTPUT
+              

@@ -25,6 +25,13 @@ jobs:
         uses: ./.github/workflows/9-reusable.yml
         with:
             artifact-name: ios-info-files
+    
+    print-deploy-result:
+        needs: deploy
+        runs-on: macos-latest
+        step:
+            - name: Print deploy output LAST
+              run: echo "${{ needs.deploy.outputs.result }}"
             
         
         
