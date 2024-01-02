@@ -1,11 +1,11 @@
 name: Reusable workflow
-# workflow_call allows to call this workflow from another workflows
+# workflow_call allows calling this workflow from other workflows
 
 on:
   workflow_call:
     inputs:
       artifact-name:
-        description: the name of deployable artifact file
+        description: the name of the deployable artifact file
         required: true
         default: dist
         type: string
@@ -18,9 +18,9 @@ jobs:
   deploy:
     runs-on: macos-latest
     outputs:
-      outcome: ${{ steps.set-result.outputs.step-resulttt }}
+      outcome: ${{ steps.set-result.outputs.step-result }}
     steps:
-      - name: Echo...
+      - name: Echo Artifact Name
         run: echo ${{ inputs.artifact-name }}
               
       - name: Get Code
@@ -36,4 +36,4 @@ jobs:
               
       - name: Set result output
         id: set-result
-        run: echo "step-resulttt=success" >> $GITHUB_OUTPUT
+        run: echo "step-result=success" >> $GITHUB_ENV
