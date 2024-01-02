@@ -9,13 +9,15 @@ jobs:
         runs-on: macos-latest
         steps:
             - name: Output info
-              run: echo "Deploying and uploading (step 1)"
+              run: |
+                echo "Deploying and uploading (step 1)"
+                ls
               
             - name: Archive artifact
               uses: actions/upload-artifact@v2
               with:
                 name: ios-info-files
-                path: ./github-actions/github-actions/Resources/configuration.json
+                path: ./github-actions/github-actions/github-actions/Resources/configuration.json
               
     deploy:
         needs: start
