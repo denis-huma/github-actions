@@ -1,0 +1,38 @@
+name: Using reusable workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  start:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: List directory contents
+        run: ls
+
+      - name: Archive artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ios-info-files
+          path: ./github-actions/github-actions/Resources/configuration.json
+
+  deploy:
+    needs: start
+    runs-on: macos-latest
+    steps:
+      - name: Use Reusable Workflow
+        uses: ./.github/workflows/9-reusable.yml  # This path should be corrected to the actual path of your reusable workflow.
+        with:
+          artifact-name: ios-info-files
+
+  print-deploy-result:
+    needs: deploy
+    runs-on: macos-latest
+    steps:  # Corrected the typo here from "step" to "steps"
+      - name: Print deploy output LAST
+        run: echo "${{ needs.deploy.outputs.result }}"
