@@ -1,15 +1,26 @@
 name: Matrix
 on:
-    push:
+    pull_request:
         branches:
             - main
 
 jobs:
     build:
+        continue-on-error: true
+        # allows to continue execute all the jobs that related to this matrix even if some jobs for some combination failed
         strategy:
             matrix:
-                xcode: [12.5.1, 13.0]
+                node-version: [12, 14, 16]
                 operation-system: [ubuntu-latest, macos-latest]
+                # include, exclude - reserved key
+                include:
+                    - node-version: 18
+                      operating-system: ubuntu-latest
+                exclude:
+                    - node-version: 12
+                      operating-system: macos-latest
+                    
+                
                 
         runs-on: ${{ matrix.operation-system }}
         steps:

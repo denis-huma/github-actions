@@ -1,0 +1,9 @@
+name: Using reusable workflow
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        uses: ./.github/workflows/9-reusable.yml 
