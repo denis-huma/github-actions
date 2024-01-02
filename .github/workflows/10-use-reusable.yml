@@ -5,5 +5,12 @@ on:
             - main
 
 jobs:
+    start:
+        runs-on: macos-latest
+        steps:
+            - name: Output info
+              run: echo "Deploying and uploading (step 1)"
+              
     deploy:
+        needs: start
         uses: ./.github/workflows/9-reusable.yml 

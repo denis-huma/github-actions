@@ -7,4 +7,4 @@ jobs:
         runs-on: macos-latest
         steps:
             - name: Output info
-              run: echo "Deploying and uploading..."
+              run: echo "Deploying and uploading (step 2)"
