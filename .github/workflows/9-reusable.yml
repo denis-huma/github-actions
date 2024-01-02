@@ -6,7 +6,7 @@ on:
         inputs: # reserved word here
             artifact-name: # your word here
                 description: the name of deployable artifact file
-                required: false
+                required: true
                 # required true - the value is needed from artifact name
                 # required false - can be called without providing and input value from artifact name
                 default: dist # can be any word here
@@ -16,6 +16,9 @@ jobs:
     deploy:
         runs-on: macos-latest
         steps:
+            - name: Echo...
+              run: echo inputs.artifact-name
+              
             - name: Get Code
               uses: actions/download-artifact@v3
               with:
