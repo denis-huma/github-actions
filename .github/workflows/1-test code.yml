@@ -25,6 +25,11 @@ jobs:
               uses: actions/checkout@v3
               # you can add some configuration or settings using 'with' keyword
               
+            - name: Set up Xcode
+              uses: actions/setup-xcode@v2
+              with:
+                xcode-version: '13.x'  # Adjust the Xcode version as needed
+
             - name: List Simulators
               run: |
                 # Run the command to list simulators and store the output in a variable
@@ -58,7 +63,7 @@ jobs:
                 ls -la
                 xcodebuild -workspace github-actions.xcworkspace \
                            -scheme github-actions \
-                           -destination 'platform=iOS Simulator,OS=16.2,name=iPhone 11' \
+                           -destination 'platform=iOS Simulator,name=iPhone 13,OS=latest' \
                            build test | xcpretty
                            -upload-test-results
 
