@@ -2,40 +2,40 @@ name: Reusable workflow
 # workflow_call allows to call this workflow from another workflows
 
 on:
-  workflow_call:
-    inputs:
-      artifact-name:
-        description: the name of deployable artifact file
-        required: true
-        default: dist
-        type: string
+    workflow_call:
+        inputs:
+            artifact-name:
+                description: the name of deployable file
+                required: true
+                default: distDefault
+                type: string
         
-    outputs:
-      result:
-        description: The result of deployment
-        value: ${{ jobs.deploy.outputs.outcome }}
+        outputs:
+            result:
+                description: The result of deployment
+                value: ${{ jobs.deploy.outputs.outcome }}
 
 jobs:
-  deploy:
-    # outputs:
-    #   outcome: ${{ steps.set-result.outputs.step-resulttt }}
-      
+    deploy:
+        outputs:
+            outcome: ${{ steps.set-result.outputs.step-resulttt }}
+
     runs-on: macos-latest
     steps:
-      - name: Echo...
-        run: echo ${{ inputs.artifact-name }}
+        - name: Echo...
+          run: echo ${{ inputs.artifact-name }}
               
-      - name: Get Code
-        uses: actions/download-artifact@v3
-        with:
-          name: ${{ inputs.artifact-name }}
+        - name: Get Code
+          uses: actions/download-artifact@v3
+          with:
+            name: ${{ inputs.artifact-name }}
                 
-      - name: List files
-        run: ls
+        - name: List files
+          run: ls
                 
-      - name: Output info
-        run: echo "Deploying and uploading (step 2)"
+        - name: Output info
+          run: echo "Deploying and uploading (step 2)"
               
-    #   - name: Set result output
-    #     id: set-result
-    #     run: echo "step-resulttt=success" >> $GITHUB_OUTPUT
+        - name: Set result output
+          id: set-result
+          run: echo "step-resulttt=success" >> $GITHUB_OUTPUT
