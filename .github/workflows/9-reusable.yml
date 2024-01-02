@@ -10,20 +10,20 @@ on:
                 default: distDefault
                 type: string
         
-        outputs:
-            result:
-                description: The result of deployment
-                value: ${{ jobs.deploy.outputs.outcome }}
+        # outputs:
+        #     result:
+        #         description: The result of deployment
+        #         value: ${{ jobs.deploy.outputs.outcome }}
 
 jobs:
     deploy:
         # outputs:
         #     outcome: ${{ steps.set-result.outputs.step-resulttt }}
 
-        runs-on: macos-latest
-        steps:
-        - name: Echo...
-          run: echo ${{ inputs.artifact-name }}
+        # runs-on: macos-latest
+        # steps:
+        # - name: Echo...
+        #   run: echo ${{ inputs.artifact-name }}
               
         - name: Get Code
           uses: actions/download-artifact@v3
