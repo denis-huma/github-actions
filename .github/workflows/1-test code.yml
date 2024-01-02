@@ -24,11 +24,6 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v3
               # you can add some configuration or settings using 'with' keyword
-              
-            - name: Set up Xcode
-              uses: actions/setup-xcode@v2
-              with:
-                xcode-version: '13.x'  # Adjust the Xcode version as needed
 
             - name: List Simulators
               run: |
