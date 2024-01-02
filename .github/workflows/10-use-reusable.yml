@@ -9,9 +9,7 @@ jobs:
         runs-on: macos-latest
         steps:
             - name: Output info
-              run: |
-                echo "Deploying and uploading (step 1)"
-                ls
+              run: ls
               
             - name: Archive artifact
               uses: actions/upload-artifact@v2
