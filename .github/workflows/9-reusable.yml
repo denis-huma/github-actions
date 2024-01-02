@@ -1,10 +1,28 @@
 name: Reusable workflow
-on: workflow_call
 # workflow_call allow to call this workflow from another workflows
+
+on:
+    workflow_call:
+        inputs: # reserved word here
+            artifact-namexxx: # your word here
+                description: the name of deployable artifact file
+                required: true
+                # required true - the value is needed from artifact name
+                # required false - can be called without providing and input value from artifact name
+                default: dist # can be any word here
+                type: string # expected type of value here
     
 jobs:
     deploy:
         runs-on: macos-latest
         steps:
+            - name: Get Code
+              uses: actions/download-artifacts@v3
+              with:
+                ${{ inputs.artifact-name }}
+                
+            - name: List files
+              run: ls
+                
             - name: Output info
               run: echo "Deploying and uploading (step 2)"

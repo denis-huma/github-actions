@@ -11,6 +11,26 @@ jobs:
             - name: Output info
               run: echo "Deploying and uploading (step 1)"
               
+            - name: Archive artifact
+              uses: actions/upload-artifact@v2
+              with:
+                name: ios-info-files
+                path: ./github-actions/github-actions/Resources/configuration.json
+              
     deploy:
         needs: start
-        uses: ./.github/workflows/9-reusable.yml 
+        uses: ./.github/workflows/9-reusable.yml
+        with:
+            artifact-namexxx: ios-info-files
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
