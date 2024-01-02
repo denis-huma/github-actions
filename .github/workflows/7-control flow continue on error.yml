@@ -1,0 +1,39 @@
+name: Outputs
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: macos-latest
+        steps:
+        - name: Get code
+          id: get-code-step
+          uses: actions/checkout@v3
+          
+        - name: List resources
+          continue-on-error: true # the whole job will continue execution if this step fails
+          run: echo 'List resources'
+
+    report:
+        needs: [build]
+        if: failure() # will return true if any of other job failure
+        runs-on: macos-latest
+        steps:
+            - name: Output information
+              run: |
+                echo "Something went wrong here..."
+                echo "${{ toJSON(github) }}"
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
