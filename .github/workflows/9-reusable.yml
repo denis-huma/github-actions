@@ -2,7 +2,7 @@ name: Reusable workflow
 # workflow_call allows to call this workflow from another workflows
 
 on:
-    workflow_call:
+    workflow_run:
         inputs: # reserved word here
             artifact-name: # your word here
                 description: the name of deployable artifact file
