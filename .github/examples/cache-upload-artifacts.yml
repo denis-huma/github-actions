@@ -132,10 +132,11 @@ jobs:
               id: cache-deps
               uses: ./.github/actions/cached-deps
               with:
-                caching: 'false'
+                caching: 'false' # set caching input to 'false', see actions/cached-deps folder -> action.yml file
 
-            - name: Output info
-              run: echo "Cached used? ${{ steps.cache-deps.outputs.used-cached }}"
+            - name: Output information
+              run: echo "Cached used? ${{ steps.cache-deps.outputs.used-cachexxx }}"
+              # see outputs: -> used-cachexxx in actions/cached-deps folder -> action.yml file
 
 
 # Uncommit in order to swap out custom action with these lines of code

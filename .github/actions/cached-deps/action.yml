@@ -1,24 +1,24 @@
-name: 'Get & Cache Dependecies'
-description: 'Get the dependencies (via podfile) and cache them'
-inputs:
+name: 'Get & Cache Dependecies' # title of action in github actions store
+description: 'Get the dependencies (via podfile) and cache them' # description of action in github actions store
+
+inputs: # for make custom action more generic
     cachinggg:
-        description: 'Whether to cache dependecies or not'
-        required: false
+        description: 'Whether to cache dependecies or not' # must be added
+        required: false # whether this input is needed or not, user must provided this value or not
         # true - user must provide a value in the workflow using this action
-        # false - valus is not actually needed
+        # false - valus is not actually needed, optional
         default: 'true' # can set any value, not only true,false...
 
 outputs:
-    used-cache:
+    used-cachexxx:
         description: 'Whether the cache was used'
-        value: ${{ steps.installDp.outputs.cache }}
-
+        value: ${{ steps.installDpID.outputs.cachexxx }} # assing a value here
 
 runs:
-    using: 'composite'
+    using: 'composite' # this tells github that this is a custom composite action
     steps:
         - name: Cache dependencies
-          if: inputs.cachinggg == 'true'
+          if: inputs.cachinggg == 'true' # check default value (true)
           id: cacheID
           uses: actions/cache@v3
           with:
@@ -28,11 +28,11 @@ runs:
             #     ${{ runner.os }}-pods-
 
         - name: Install pod dependencies
-          id: installDep
+          id: installDepID
           if: steps.cache.outputs.cache-hit != 'true' || inputs.cachinggg != 'true'
           run: |
                 cd github-actions
                 pod install
-                echo "cache=${{ inputs.cachinggg }}" >> $GITHUB_OUTPUT
-          shell: bash
+                echo "cachexxx=${{ inputs.cachinggg }}" >> $GITHUB_OUTPUT
+          shell: bash # bash - which shell environment should be used for this action
 
