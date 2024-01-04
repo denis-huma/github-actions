@@ -27,8 +27,6 @@ jobs:
 
             - name: List Simulators
               run: |
-                # Run the command to list simulators and store the output in a variable
-                simulators=$(xcrun simctl list devices)
           
                 # Output the captured simulators information
                 echo "SIMULATORS: $simulators"
@@ -49,8 +47,11 @@ jobs:
                 cd ./github-actions
                 pod install
                 
-#            - name: Force Xcode 15.0
-#              run: sudo xcode-select -switch /Applications/Xcode.app
+            - name: Force Xcode Last Version
+              run: |
+                sudo xcode-select -switch /Applications/Xcode.app
+                # Run the command to list simulators and store the output in a variable
+                simulators=$(xcrun simctl list devices)
  
             - name: Build XCode project
               run: |
