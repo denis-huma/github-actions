@@ -24,16 +24,6 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v3
               # you can add some configuration or settings using 'with' keyword
-
-            - name: List Simulators
-              run: |
-          
-                # Output the captured simulators information
-                echo "SIMULATORS: $simulators"
-          
-                # Further processing (optional): Extract specific details from the output
-                # For example, extracting iPhone 13 with iOS 15.0
-                echo "SIMULATORS: $simulators" | grep -A 2 "iPhone 13 ("
               
             - name: Install xcpretty
               run: gem install xcpretty
