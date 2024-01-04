@@ -45,7 +45,9 @@ jobs:
                 
                                            
             - name: List Simulators
-              run: xcodebuild -showdestinations
+              run: |
+                cd ./github-actions
+                xcodebuild -showdestinations
  
             - name: Build XCode project
               run: |
