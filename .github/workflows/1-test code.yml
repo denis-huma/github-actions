@@ -54,11 +54,13 @@ jobs:
               run: |
                 cd github-actions
                 ls -la
-                xcodebuild -workspace github-actions.xcworkspace \
+                xcodebuild test -workspace github-actions.xcworkspace \
                            -scheme github-actions \
-                           -destination 'platform=iOS Simulator,name=iPhone 13' \
-                           build test | xcpretty
-                           -upload-test-results
+                           -destination 'platform=iOS Simulator,name=Any iOS Simulator Device' \
+
+
+
+
 
 
              
