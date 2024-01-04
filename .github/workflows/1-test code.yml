@@ -41,7 +41,11 @@ jobs:
               run: |
                 sudo xcode-select -switch /Applications/Xcode.app
                 # Run the command to list simulators and store the output in a variable
-                simulators=$(xcrun simctl list devices)
+                # simulators=$(xcrun simctl list devices)
+                
+                                           
+            - name: List Simulators
+              run: xcodebuild -showdestinations
  
             - name: Build XCode project
               run: |
@@ -52,6 +56,7 @@ jobs:
                            -destination 'platform=iOS Simulator,name=iPhone 13' \
                            build test | xcpretty
                            -upload-test-results
+
 
              
     predeploy-job:
