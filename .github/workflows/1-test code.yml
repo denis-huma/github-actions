@@ -54,8 +54,9 @@ jobs:
                     sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
                     sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 16.2.simruntime
                     xcrun simctl list runtimes
-                    xcrun simctl create "iPhone 12 (1212A947-F2AF-4982-A141-800776EAAD4B)" "com.apple.CoreSimulator.SimRuntime.iOS-16-2"
+                    xcrun simctl create "iPhone 12" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-16-2
                     xcrun simctl list devices 16.2
+                    
 
             # - name: Create iOS Simulator
             #   run: xcrun simctl create "iPhone 12" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-16-2
@@ -64,8 +65,7 @@ jobs:
               run: |
                 cd ./github-actions
                 ls -R
-                xcodebuild clean test -workspace github-actions.xcworkspace -scheme github-actions -destination 'platform=iOS Simulator,id=1212A947-F2AF-4982-A141-800776EAAD4B'
-
+                xcodebuild clean test -workspace github-actions.xcworkspace -scheme github-actions -destination 'platform=iOS Simulator,name=generic'
 
 #    predeploy-job:
 #        # before this job will run, we have to wait until test-job finished
