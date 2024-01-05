@@ -53,11 +53,11 @@ jobs:
               run: |
                 cd github-actions
                 ls -la
-                xcodebuild clean test -workspace github-actions.xcworkspace \
+                /Applications/Xcode_14.2.app/Contents/Developer/usr/bin/xcodebuild clean test -workspace github-actions.xcworkspace \
                            -scheme github-actions \
                            -destination 'platform=iOS Simulator,name=Any iOS Simulator Device' \
+                 working-directory: github-actions
 
-             
 #    predeploy-job:
 #        # before this job will run, we have to wait until test-job finished
 #        needs: test-job # can contain an array of multiple jobs to be finished [test-job1, test-job2, ect.]
@@ -65,10 +65,3 @@ jobs:
 #        steps:
 #            - name: Build project
 #              run: echo "build project..."
-              
-              
-              
-              
-              
-          
-              
