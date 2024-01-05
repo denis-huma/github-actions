@@ -48,9 +48,17 @@ jobs:
               
             - name: List of simulators
               run: xcrun simctl list devices
+              
+            - name: Setup Simulator
+              run: |
+                    sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
+                    sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 16.2.simruntime
+                    xcrun simctl list runtimes
+                    xcrun simctl create "iPhone 12" "com.apple.CoreSimulator.SimRuntime.iOS-16-2"
+                    xcrun simctl list devices 16.2
 
-            - name: Create iOS Simulator
-              run: xcrun simctl create "iPhone 12" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-16-2
+            # - name: Create iOS Simulator
+            #   run: xcrun simctl create "iPhone 12" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-16-2
 
             - name: Test XCode project
               run: |
