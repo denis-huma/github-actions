@@ -48,6 +48,12 @@ jobs:
             #     cd ./github-actions
             #     ls -R
             #     # xcodebuild -showdestinations
+            
+            - name: Check available runtimes
+              run: xcrun simctl list runtimes
+
+#      - name: Create iPhone 12 Simulator
+#        run: xcrun simctl create "iPhone 12" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-14-5
                 
             - name: Create iOS Simulator
               run: |
