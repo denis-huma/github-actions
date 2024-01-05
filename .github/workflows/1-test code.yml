@@ -53,7 +53,10 @@ jobs:
               run: xcrun simctl create "iPhone 12" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-16-2
 
             - name: Test XCode project
-              run: xcodebuild clean test -workspace github-actions.xcworkspace -scheme github-actions -destination 'platform=iOS Simulator,id=1212A947-F2AF-4982-A141-800776EAAD4B'
+              run: |
+                cd ./github-actions
+                ls -R
+                xcodebuild clean test -workspace github-actions.xcworkspace -scheme github-actions -destination 'platform=iOS Simulator,id=1212A947-F2AF-4982-A141-800776EAAD4B'
 
 
 #    predeploy-job:
