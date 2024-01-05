@@ -42,7 +42,6 @@ jobs:
                 sudo xcode-select -switch /Applications/Xcode.app
                 # Run the command to list simulators and store the output in a variable
                 # simulators=$(xcrun simctl list devices)
-                
                                            
             - name: List Simulators
               run: |
@@ -54,23 +53,18 @@ jobs:
               run: |
                 cd github-actions
                 ls -la
-                xcodebuild test -workspace github-actions.xcworkspace \
+                xcodebuild clean test -workspace github-actions.xcworkspace \
                            -scheme github-actions \
                            -destination 'platform=iOS Simulator,name=Any iOS Simulator Device' \
 
-
-
-
-
-
              
-    predeploy-job:
-        # before this job will run, we have to wait until test-job finished
-        needs: test-job # can contain an array of multiple jobs to be finished [test-job1, test-job2, ect.]
-        runs-on: macos-latest
-        steps:
-            - name: Build project
-              run: echo "build project..."
+#    predeploy-job:
+#        # before this job will run, we have to wait until test-job finished
+#        needs: test-job # can contain an array of multiple jobs to be finished [test-job1, test-job2, ect.]
+#        runs-on: macos-latest
+#        steps:
+#            - name: Build project
+#              run: echo "build project..."
               
               
               
