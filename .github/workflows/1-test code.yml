@@ -57,7 +57,7 @@ jobs:
                 
             - name: Create iOS Simulator
               run: |
-                xcrun simctl create "iPhone 12" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-14-5
+                xcrun simctl create "iPhone 12" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-16-2
 
             - name: Test XCode project
               run: |
