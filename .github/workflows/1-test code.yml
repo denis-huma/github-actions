@@ -56,7 +56,6 @@ jobs:
                 /Applications/Xcode_14.2.app/Contents/Developer/usr/bin/xcodebuild clean test -workspace github-actions.xcworkspace \
                            -scheme github-actions \
                            -destination 'platform=iOS Simulator,name=Any iOS Simulator Device' \
-                 working-directory: github-actions
 
 #    predeploy-job:
 #        # before this job will run, we have to wait until test-job finished
