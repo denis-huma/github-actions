@@ -58,8 +58,7 @@ jobs:
                 ls -la
                 /Applications/Xcode_14.2.app/Contents/Developer/usr/bin/xcodebuild clean test -workspace github-actions.xcworkspace \
                            -scheme github-actions \
-                           -destination 'platform=iOS Simulator,name=iPhone11,OS=16.2' \
-                           
+                           -destination 'platform=iOS Simulator,id=1212A947-F2AF-4982-A141-800776EAAD4B \
 
 #    predeploy-job:
 #        # before this job will run, we have to wait until test-job finished
