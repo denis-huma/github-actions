@@ -14,7 +14,8 @@ on:
 jobs:
   assign_label:
   permissions: # read-all / write-all - all the permissions in github list like actions, checks, contents, deployments, id-token, issues
-    issues: write # need write access, the other permissions are not granted by default if we set any persmission here
+    # depending on permission we set here, it will reflect in secrets.GITHUB_TOKEN scope of available actions
+    issues: write # need write access, the other permissions are not granted by default if we set any permission here
     runs-on: macos-latest
     steps:
         - name: Assing Label
