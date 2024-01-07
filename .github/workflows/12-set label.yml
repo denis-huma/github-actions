@@ -4,24 +4,19 @@ on:
   issues:
     types: [opened]
 
-jobs:
-  set_bug_label:
-    runs-on: ubuntu-latest
 
+jobs:
+  assign_label:
+    runs-on: macos-latest
     steps:
-      - name: Check if the issue title contains 'bug'
-        uses: actions/github-script@v4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const issueTitle = github.context.payload.issue.title;
-            const containsBug = issueTitle.toLowerCase().includes('bug');
-            if (containsBug) {
-              const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
-              await octokit.rest.issues.addLabels({
-                owner: github.context.payload.repository.owner.login,
-                repo: github.context.payload.repository.name,
-                issue_number: github.context.payload.issue.number,
-                labels: ['bug']
-              });
-            }
+        - name: Assing Label
+          if: contains(github.event.issue.title, 'bug')
+          run: |
+            curl -X POST \
+            --url https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
+            -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+            -H 'content-type: application/json' \
+            -d '{
+                "labels": ["bug"]
+            }' \
+            --fail
