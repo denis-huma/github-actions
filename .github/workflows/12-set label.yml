@@ -1,11 +1,11 @@
 name: Label Issues (Permissions Example)
 on:
-#  issues:
-#    types:
-#      - closed
-    push:
-        branches:
-         - main
+  issues:
+    types:
+      - opened
+#    push:
+#        branches:
+#         - main
 
 # permissions: - can set permission on workflow level
 # to see all the allowed permission -
