@@ -82,8 +82,8 @@ class SignUpPresenterTests: XCTestCase {
 
         self.wait(for: [errorExpectation], timeout: 5.0)
 
-        XCTAssertEqual(mocksignUpView.errorSignupCounter, 10)
-        XCTAssertEqual(mocksignUpView.successfulSignupCounter, 10)
+        XCTAssertEqual(mocksignUpView.errorSignupCounter, 1)
+        XCTAssertEqual(mocksignUpView.successfulSignupCounter, 0)
         XCTAssertNotNil(mocksignUpView.signupError)
     }
 }

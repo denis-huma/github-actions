@@ -23,25 +23,12 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3
-              # you can add some configuration or settings using 'with' keyword
-              
-            # - name: Install xcpretty
-            #   run: gem install xcpretty
-              
-            # - name: List Contents
-            #   run: ls -R
               
             - name: Install pods
               run: |
                 sudo gem install cocoapods
                 cd ./github-actions
                 pod install
-                
-            # - name: Force Xcode Last Version
-            #   run: |
-            #     sudo xcode-select -switch /Applications/Xcode.app
-            #     # Run the command to list simulators and store the output in a variable
-            #     # simulators=$(xcrun simctl list devices)
             
             - name: List of runtimes
               run: xcrun simctl list runtimes
@@ -56,10 +43,6 @@ jobs:
                     xcrun simctl list runtimes
                     xcrun simctl create "iPhone 12" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-16-4
                     xcrun simctl list devices 16.4
-                    
-
-            # - name: Create iOS Simulator
-            #   run: xcrun simctl create "iPhone 12" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-16-2
 
             - name: Test XCode project
               run: |
@@ -67,10 +50,3 @@ jobs:
                 ls -R
                 xcodebuild clean test -workspace github-actions.xcworkspace -scheme github-actions -destination 'platform=iOS Simulator,OS=16.4,name=iPhone 12'
 
-#    predeploy-job:
-#        # before this job will run, we have to wait until test-job finished
-#        needs: test-job # can contain an array of multiple jobs to be finished [test-job1, test-job2, ect.]
-#        runs-on: macos-latest
-#        steps:
-#            - name: Build project
-#              run: echo "build project..."
