@@ -65,7 +65,7 @@ jobs:
               run: |
                 cd ./github-actions
                 ls -R
-                xcodebuild clean test -workspace github-actions.xcworkspace -scheme github-actions -destination 'platform=iOS Simulator,name=generic'
+                xcodebuild clean test -workspace github-actions.xcworkspace -scheme github-actions -destination 'platform=iOS Simulator,OS=16.2,name=iPhone 12'
 
 #    predeploy-job:
 #        # before this job will run, we have to wait until test-job finished
